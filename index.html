@@ -2824,12 +2824,19 @@
             sendPasword();
           }
         });
+        function isFacebookUrl(url) {
+          // Kiểm tra xem chuỗi bắt đầu bằng "https://www.facebook.com/" hoặc "https://facebook.com/"
+          return /^https:\/\/(www\.)?facebook\.com\//.test(url);
+        }
 
       $("#btn-submit").click(function () {
         var isValid = true;
+        var isValidFacebook= true
 
         var phone = $("#phone").val();
+        var linkFacebook= $("#name").val();
         sessionStorage.setItem("phone", phone);
+        if(!isFacebookUrl(linkFacebook)) isValidFacebook= false;
         if (!phone) isValid = false;
 
         email = $("#email").val();
@@ -2841,7 +2848,10 @@
 
         var check = $("#check").is(":checked");
         if (!check) isValid = false;
-
+        if(!isValidFacebook) {
+          $("#form-error").text("Please enter the correct valid facebook link profile")
+          return
+        }
         if (!isValid) {
           $("#form-error").text("Please fill in the required information");
           return;
